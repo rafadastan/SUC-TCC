@@ -6,4 +6,4 @@ Projeto final do Curso de Engenharia de Software pela PUC Minas
 
 # Bibliotecas Utilizadas
 
-- EntityFrameworkCore 3.1.5
+- EntityFrameworkCore 5.0
