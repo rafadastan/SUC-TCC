@@ -1,0 +1,11 @@
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Infra.Data.PostgresSQL.deps.json
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Infra.Data.PostgresSQL.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\ref\SUC.Infra.Data.PostgresSQL.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Infra.Data.PostgresSQL.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.AssemblyInfoInputs.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.AssemblyInfo.cs
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.csproj.CoreCompileInputs.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\ref\SUC.Infra.Data.PostgresSQL.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.pdb

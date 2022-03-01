@@ -1,0 +1,12 @@
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\bin\Debug\net5.0\SUC.Validations.deps.json
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\bin\Debug\net5.0\SUC.Validations.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\bin\Debug\net5.0\ref\SUC.Validations.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\bin\Debug\net5.0\SUC.Validations.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.csproj.AssemblyReference.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.AssemblyInfoInputs.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.AssemblyInfo.cs
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.csproj.CoreCompileInputs.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\ref\SUC.Validations.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Validations\obj\Debug\net5.0\SUC.Validations.pdb

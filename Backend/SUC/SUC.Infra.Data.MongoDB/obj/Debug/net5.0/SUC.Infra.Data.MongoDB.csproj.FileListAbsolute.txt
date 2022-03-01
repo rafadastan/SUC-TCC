@@ -1,0 +1,11 @@
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\bin\Debug\net5.0\SUC.Infra.Data.MongoDB.deps.json
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\bin\Debug\net5.0\SUC.Infra.Data.MongoDB.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\bin\Debug\net5.0\ref\SUC.Infra.Data.MongoDB.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\bin\Debug\net5.0\SUC.Infra.Data.MongoDB.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.GeneratedMSBuildEditorConfig.editorconfig
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.AssemblyInfoInputs.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.AssemblyInfo.cs
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.csproj.CoreCompileInputs.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\ref\SUC.Infra.Data.MongoDB.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.pdb
