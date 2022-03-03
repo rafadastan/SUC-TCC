@@ -16,9 +16,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\SUC.CrossCuttingCryptography.csproj",
-      "projectName": "SUC.CrossCuttingCryptography",
-      "projectPath": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\SUC.CrossCuttingCryptography.csproj",
+      "projectUniqueName": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\SUC.CrossCutting.Cryptography.csproj",
+      "projectName": "SUC.CrossCutting.Cryptography",
+      "projectPath": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\SUC.CrossCutting.Cryptography.csproj",
       "packagesPath": "C:\\Users\\raphael.assis\\.nuget\\packages\\",
       "outputPath": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\obj\\",
       "projectStyle": "PackageReference",

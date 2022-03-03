@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Z7M1XgqfDtHIe2HqABlY95ivLkfJFspipCj9biDRmk4DH+4sET4KenDar6VpR/RE594j8NUN7Puxk7NukbQebQ==",
+  "dgSpecHash": "F/MtITvAr5q6SRYPn7Wc8daRLMaqkX5zvteyBh32ZUt2V86VsXuxoYj/WavEvV11ED49vUebqILmY6CveajyLg==",
   "success": true,
-  "projectFilePath": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\SUC.CrossCuttingCryptography.csproj",
+  "projectFilePath": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.CrossCuttingCryptography\\SUC.CrossCutting.Cryptography.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -4,4 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="1. BaseRepository\" />
+    <Folder Include="Contexts\" />
+    <Folder Include="Mappings\" />
+    <Folder Include="3. Repository\" />
+    <Folder Include="2. ReadRepository\" />
+  </ItemGroup>
+
 </Project>

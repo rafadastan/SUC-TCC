@@ -15,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. CrossCutting", "5. Cross
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6. Test", "6. Test", "{AA5D3467-9037-4E65-B45A-C06726584F52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Api", "SUC.Api\SUC.Api.csproj", "{4CEAAAEF-2C71-4B16-AA06-C460FDC96EE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Api", "SUC.Api\SUC.Api.csproj", "{4CEAAAEF-2C71-4B16-AA06-C460FDC96EE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Application", "SUC.Application\SUC.Application.csproj", "{A3F75CC8-CFCA-45E1-A026-A9620525C406}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Application", "SUC.Application\SUC.Application.csproj", "{A3F75CC8-CFCA-45E1-A026-A9620525C406}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Domain", "SUC.Domain\SUC.Domain.csproj", "{57913275-EA07-4DDB-837A-0AE50095B44C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Domain", "SUC.Domain\SUC.Domain.csproj", "{57913275-EA07-4DDB-837A-0AE50095B44C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1. Data", "4.1. Data", "{DC8A9AB9-1E7E-4077-A936-A57664DD281D}"
 EndProject
@@ -27,27 +27,27 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2. Security", "4.2. Secur
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.3. Validations", "4.3. Validations", "{CF2BADD0-5B57-445B-A454-66C07BB99AEB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Infra.Data.MongoDB", "SUC.Infra.Data.MongoDB\SUC.Infra.Data.MongoDB.csproj", "{02D9C5E3-BA49-4661-8D35-51D83EB08F87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Infra.Data.MongoDB", "SUC.Infra.Data.MongoDB\SUC.Infra.Data.MongoDB.csproj", "{02D9C5E3-BA49-4661-8D35-51D83EB08F87}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cached", "Cached", "{9802E287-3BEE-4557-867B-ED5E1387E172}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PostgresSQL", "PostgresSQL", "{B233E37B-A56C-4D82-88A0-40D984795C50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Infra.Data.PostgresSQL", "SUC.Infra.Data.PostgresSQL\SUC.Infra.Data.PostgresSQL.csproj", "{555181C9-4C63-4AE2-8701-47BBE83A69E3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Infra.Data.PostgresSQL", "SUC.Infra.Data.PostgresSQL\SUC.Infra.Data.PostgresSQL.csproj", "{555181C9-4C63-4AE2-8701-47BBE83A69E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Security", "SUC.Security\SUC.Security.csproj", "{5D5FFE4D-BC12-4749-B228-54D3C28A66C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Security", "SUC.Security\SUC.Security.csproj", "{5D5FFE4D-BC12-4749-B228-54D3C28A66C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Validations", "SUC.Validations\SUC.Validations.csproj", "{F60D45FF-FF89-48F5-820E-0BD0A21E015B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Validations", "SUC.Validations\SUC.Validations.csproj", "{F60D45FF-FF89-48F5-820E-0BD0A21E015B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.CrossCutting.IOC", "SUC.CrossCutting.IOC\SUC.CrossCutting.IOC.csproj", "{F70BB030-91CB-457C-99EA-33FBCE49AE0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.CrossCutting.IOC", "SUC.CrossCutting.IOC\SUC.CrossCutting.IOC.csproj", "{F70BB030-91CB-457C-99EA-33FBCE49AE0B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.2. IOC", "5.2. IOC", "{06B40ABB-225A-46E4-AE2D-189AB8D1C678}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.1. Cryptography", "5.1. Cryptography", "{26FD5A36-9566-4516-804C-37664100F09D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.CrossCuttingCryptography", "SUC.CrossCuttingCryptography\SUC.CrossCuttingCryptography.csproj", "{6F9A39D4-6754-4FA0-9E30-07DEE98D292F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.CrossCutting.Cryptography", "SUC.CrossCuttingCryptography\SUC.CrossCutting.Cryptography.csproj", "{6F9A39D4-6754-4FA0-9E30-07DEE98D292F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Tests", "SUC.Tests\SUC.Tests.csproj", "{FB9D14F4-F032-4EDF-B6D9-55E480606595}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Tests", "SUC.Tests\SUC.Tests.csproj", "{FB9D14F4-F032-4EDF-B6D9-55E480606595}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
