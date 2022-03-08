@@ -9,3 +9,9 @@ C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\o
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\obj\Debug\net5.0\SUC.CrossCutting.IOC.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\obj\Debug\net5.0\ref\SUC.CrossCutting.IOC.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\obj\Debug\net5.0\SUC.CrossCutting.IOC.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\obj\Debug\net5.0\SUC.CrossCutting.IOC.csproj.AssemblyReference.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\bin\Debug\net5.0\SUC.Application.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\bin\Debug\net5.0\SUC.Domain.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\bin\Debug\net5.0\SUC.Application.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\bin\Debug\net5.0\SUC.Domain.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.CrossCutting.IOC\obj\Debug\net5.0\SUC.CrossCutting.IOC.csproj.CopyComplete

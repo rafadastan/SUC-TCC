@@ -6,14 +6,16 @@
 
   <ItemGroup>
     <Folder Include="Adapters\" />
-    <Folder Include="Contracts\Auth\" />
     <Folder Include="Contracts\Usuario\" />
     <Folder Include="Handlers\" />
     <Folder Include="RequestHandlers\" />
     <Folder Include="Profiles\" />
     <Folder Include="Notifications\" />
-    <Folder Include="Services\Auth\" />
     <Folder Include="Services\Usuario\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SUC.Domain\SUC.Domain.csproj" />
   </ItemGroup>
 
 </Project>

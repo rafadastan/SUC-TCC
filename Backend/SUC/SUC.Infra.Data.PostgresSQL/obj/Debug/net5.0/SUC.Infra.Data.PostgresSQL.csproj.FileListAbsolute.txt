@@ -9,3 +9,10 @@ C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.Postgre
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\ref\SUC.Infra.Data.PostgresSQL.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Infra.Data.PostgresSQL.runtimeconfig.json
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Infra.Data.PostgresSQL.runtimeconfig.dev.json
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Domain.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\bin\Debug\net5.0\SUC.Domain.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.csproj.AssemblyReference.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.csproj.CopyComplete
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.PostgresSQL\obj\Debug\net5.0\SUC.Infra.Data.PostgresSQL.genruntimeconfig.cache

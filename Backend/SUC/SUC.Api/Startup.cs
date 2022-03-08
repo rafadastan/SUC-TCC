@@ -5,6 +5,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using SUC.Api.Configurations;
+using SUC.CrossCutting.IOC;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +26,13 @@ namespace SUC.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddControllers();
+
+            AddDependencyInjection.AddDependencyInjections(services);
+            CorsConfiguration.AddCors(services);
+            EntityFrameworkConfiguration.AddPostgreSQLEntityFramework(services, Configuration);
+            JwtConfiguration.AddJwt(services, Configuration);
+            SwaggerConfiguration.AddSwagger(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -39,6 +46,8 @@ namespace SUC.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            CorsConfiguration.UseCors(app);
 
             app.UseEndpoints(endpoints =>
             {

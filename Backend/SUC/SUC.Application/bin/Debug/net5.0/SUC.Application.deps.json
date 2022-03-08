@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "SUC.Application/1.0.0": {
+        "dependencies": {
+          "SUC.Domain": "1.0.0"
+        },
         "runtime": {
           "SUC.Application.dll": {}
+        }
+      },
+      "SUC.Domain/1.0.0": {
+        "runtime": {
+          "SUC.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "SUC.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SUC.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

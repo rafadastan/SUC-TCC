@@ -9,3 +9,4 @@ C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\ref\SUC.Infra.Data.MongoDB.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Infra.Data.MongoDB\obj\Debug\net5.0\SUC.Infra.Data.MongoDB.csproj.AssemblyReference.cache

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SUC.Domain.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,8 +10,10 @@ namespace SUC.Domain.Entities
     public class Perfil
     {
         public Guid Id { get; set; }
-        public string Perfis { get; set; }
+        public PerfilEnum Perfis { get; set; }
         public Guid IdUsuario { get; set; }
+        public string Description { get; set; }
+        public bool Active { get; set; }
         public Usuario Usuario { get; set; }
     }
 }

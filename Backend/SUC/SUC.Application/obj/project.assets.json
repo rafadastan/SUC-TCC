@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "SUC.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SUC.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SUC.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SUC.Domain/1.0.0": {
+      "type": "project",
+      "path": "../SUC.Domain/SUC.Domain.csproj",
+      "msbuildProject": "../SUC.Domain/SUC.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "SUC.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\raphael.assis\\.nuget\\packages\\": {},
@@ -45,7 +64,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.Domain\\SUC.Domain.csproj": {
+              "projectPath": "C:\\Projetos\\Projetos Pessoais\\Raphael_TCC_SUC\\Backend\\SUC\\SUC.Domain\\SUC.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

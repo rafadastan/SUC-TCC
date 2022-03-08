@@ -9,3 +9,7 @@ C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\obj\De
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\obj\Debug\net5.0\SUC.Application.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\obj\Debug\net5.0\ref\SUC.Application.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\obj\Debug\net5.0\SUC.Application.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\obj\Debug\net5.0\SUC.Application.csproj.AssemblyReference.cache
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\bin\Debug\net5.0\SUC.Domain.dll
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\bin\Debug\net5.0\SUC.Domain.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Application\obj\Debug\net5.0\SUC.Application.csproj.CopyComplete

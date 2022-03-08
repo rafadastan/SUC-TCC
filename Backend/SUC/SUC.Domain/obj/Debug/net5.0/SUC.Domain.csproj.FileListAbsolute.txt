@@ -9,3 +9,4 @@ C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Domain\obj\Debug\n
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Domain\obj\Debug\net5.0\SUC.Domain.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Domain\obj\Debug\net5.0\ref\SUC.Domain.dll
 C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Domain\obj\Debug\net5.0\SUC.Domain.pdb
+C:\Projetos\Projetos Pessoais\Raphael_TCC_SUC\Backend\SUC\SUC.Domain\obj\Debug\net5.0\SUC.Domain.csproj.AssemblyReference.cache
