@@ -10,7 +10,7 @@ namespace SUC.Domain.Entities
     public class Perfil
     {
         public Guid Id { get; set; }
-        public PerfilEnum Perfis { get; set; }
+        public PerfilEnum PerfilUsuario { get; set; }
         public Guid IdUsuario { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }

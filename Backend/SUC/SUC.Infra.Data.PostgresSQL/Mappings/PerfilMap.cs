@@ -23,8 +23,8 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
             builder.Property(u => u.Id)
                 .HasColumnName("Id");
 
-            builder.Property(u => u.Perfis)
-                .HasColumnName("Perfis")
+            builder.Property(u => u.PerfilUsuario)
+                .HasColumnName("PerfilUsuario")
                 .HasMaxLength(150)
                 .IsRequired();
 

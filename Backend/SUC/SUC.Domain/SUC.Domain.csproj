@@ -6,9 +6,10 @@
 
   <ItemGroup>
     <Folder Include="Contracts\Infra\ReadRepository\" />
-    <Folder Include="Services\Perfil\" />
-    <Folder Include="Services\Usuario\" />
-    <Folder Include="Validations\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
   </ItemGroup>
 
 </Project>
