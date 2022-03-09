@@ -5,9 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\Perfil\" />
-    <Folder Include="Contracts\Usuario\" />
-    <Folder Include="Services\Auth\" />
+    <Folder Include="Contracts\Infra\ReadRepository\" />
     <Folder Include="Services\Perfil\" />
     <Folder Include="Services\Usuario\" />
     <Folder Include="Validations\" />

@@ -11,7 +11,7 @@ namespace SUC.Application.Services.Auth
 {
     public class AuthApplicationService : IAuthApplicationService
     {
-        public Task<ResponseAuthUsuarioModel> Authentication(AuthenticationCommand authenticationModel)
+        public Task<AuthModel> Authentication(AuthenticationCommand authenticationModel)
         {
             throw new NotImplementedException();
         }

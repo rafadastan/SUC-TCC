@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace SUC.Api.Security
 {
-    public class JwtToken
+    public class AccessTokenService
     {
-        private readonly JwtSettings JwtSettings;
+        private readonly AccessTokenSettings JwtSettings;
 
-        public JwtToken(JwtSettings jwtSettings)
+        public AccessTokenService(AccessTokenSettings jwtSettings)
         {
             this.JwtSettings = jwtSettings;
         }

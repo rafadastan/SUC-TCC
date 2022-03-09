@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Models.Perfil
 {
-    public class ResponsePerfilModel
+    public class PerfilModel
     {
         public Guid Id { get; set; }
         public PerfilEnum Perfis { get; set; }

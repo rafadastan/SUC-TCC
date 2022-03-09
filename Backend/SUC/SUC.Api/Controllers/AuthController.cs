@@ -15,9 +15,10 @@ namespace SUC.Api.Controllers
     public class AuthController : ControllerBase
     {
         private readonly IAuthApplicationService _authApplicationService;
-        private readonly JwtToken _jwtToken;
+        private readonly AccessTokenService _jwtToken;
 
-        public AuthController(IAuthApplicationService authApplicationService, JwtToken jwtToken)
+        public AuthController(IAuthApplicationService authApplicationService,
+            AccessTokenService jwtToken)
         {
             this._authApplicationService = authApplicationService;
             this._jwtToken = jwtToken;

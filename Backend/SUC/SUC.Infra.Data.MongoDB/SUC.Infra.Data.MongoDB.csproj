@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Caching\" />
-    <Folder Include="Contexts\" />
-    <Folder Include="Settings\" />
+    <PackageReference Include="MongoDB.Driver" Version="2.14.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SUC.Domain\SUC.Domain.csproj" />
   </ItemGroup>
 
 </Project>

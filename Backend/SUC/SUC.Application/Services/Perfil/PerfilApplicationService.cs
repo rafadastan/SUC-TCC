@@ -11,12 +11,27 @@ namespace SUC.Application.Services.Perfil
 {
     public class PerfilApplicationService : IPerfilApplicationService
     {
-        public Task<ResponsePerfilModel> Create(PerfilCreateCommand model)
+        public Task Create(PerfilCreateCommand command)
         {
             throw new NotImplementedException();
         }
 
-        public Task<List<ResponsePerfilModel>> GetAll()
+        public Task Update(PerfilUpdateCommand command)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task Delete(PerfilDeleteCommand command)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<List<PerfilModel>> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<PerfilModel> GetById(Guid id)
         {
             throw new NotImplementedException();
         }

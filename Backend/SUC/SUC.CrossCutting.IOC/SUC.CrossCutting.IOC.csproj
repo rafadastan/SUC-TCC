@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SUC.Application\SUC.Application.csproj" />
+    <ProjectReference Include="..\SUC.CrossCuttingCryptography\SUC.CrossCutting.Cryptography.csproj" />
+    <ProjectReference Include="..\SUC.Infra.Data.MongoDB\SUC.Infra.Data.MongoDB.csproj" />
+    <ProjectReference Include="..\SUC.Infra.Data.PostgresSQL\SUC.Infra.Data.PostgresSQL.csproj" />
   </ItemGroup>
 
 </Project>

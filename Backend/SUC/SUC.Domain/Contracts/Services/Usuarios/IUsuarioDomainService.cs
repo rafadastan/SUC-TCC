@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace SUC.Api.Security
+namespace SUC.Domain.Contracts.Usuarios
 {
-    public class JwtSettings
+    public interface IUsuarioDomainService
     {
-        public string SecretKey { get; set; }
     }
 }

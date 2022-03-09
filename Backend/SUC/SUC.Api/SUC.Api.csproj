@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.6" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.14" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
@@ -12,7 +13,9 @@
   <ItemGroup>
     <ProjectReference Include="..\SUC.Application\SUC.Application.csproj" />
     <ProjectReference Include="..\SUC.CrossCutting.IOC\SUC.CrossCutting.IOC.csproj" />
+    <ProjectReference Include="..\SUC.Infra.Data.MongoDB\SUC.Infra.Data.MongoDB.csproj" />
     <ProjectReference Include="..\SUC.Infra.Data.PostgresSQL\SUC.Infra.Data.PostgresSQL.csproj" />
+    <ProjectReference Include="..\SUC.Security\SUC.Security.csproj" />
   </ItemGroup>
 
 </Project>

@@ -10,6 +10,6 @@ namespace SUC.Application.Contracts.Auth
 {
     public interface IAuthApplicationService
     {
-        Task<ResponseAuthUsuarioModel> Authentication(AuthenticationCommand authenticationModel);
+        Task<AuthModel> Authentication(AuthenticationCommand authenticationModel);
     }
 }

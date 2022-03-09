@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SUC.Domain.Models
+namespace SUC.Domain.Models.Usuario
 {
-    public class ResponseAuthUsuarioModel
+    public class UsuarioModel
     {
+        public Guid Id { get; set; }
         public string Nome { get; set; }
         public string Cpf { get; set; }
         public string Email { get; set; }

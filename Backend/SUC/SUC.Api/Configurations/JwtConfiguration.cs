@@ -17,9 +17,9 @@ namespace SUC.Api.Configurations
         public static void AddJwt(IServiceCollection services, IConfiguration configuration)
         {
             var settingsSection = configuration.GetSection("JwtSettings");
-            services.Configure<JwtSettings>(settingsSection);
+            services.Configure<AccessTokenSettings>(settingsSection);
 
-            var appSettings = settingsSection.Get<JwtSettings>();
+            var appSettings = settingsSection.Get<AccessTokenSettings>();
             var key = Encoding.ASCII.GetBytes(appSettings.SecretKey);
 
             services.AddAuthentication(
@@ -43,7 +43,7 @@ namespace SUC.Api.Configurations
                     }
                 );
 
-            services.AddTransient(map => new JwtToken(appSettings));
+            services.AddTransient(map => new AccessTokenService(appSettings));
         }
 
         public static void UseJwt(IApplicationBuilder app)

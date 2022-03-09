@@ -1,4 +1,5 @@
-﻿using SUC.Domain.Enum;
+﻿using MediatR;
+using SUC.Domain.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Commands.Perfil
 {
-    public class PerfilCreateCommand
+    public class PerfilCreateCommand : IRequest
     {
         public Guid Id { get; set; }
         public Guid IdUsuario { get; set; }

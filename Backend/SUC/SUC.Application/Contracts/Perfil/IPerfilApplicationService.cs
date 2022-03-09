@@ -10,7 +10,10 @@ namespace SUC.Application.Contracts.Perfil
 {
     public interface IPerfilApplicationService
     {
-        Task<ResponsePerfilModel> Create(PerfilCreateCommand model);
-        Task<List<ResponsePerfilModel>> GetAll();
+        Task Create(PerfilCreateCommand command);
+        Task Update(PerfilUpdateCommand command);
+        Task Delete(PerfilDeleteCommand command);
+        Task<List<PerfilModel>> GetAll();
+        Task<PerfilModel> GetById(Guid id);
     }
 }

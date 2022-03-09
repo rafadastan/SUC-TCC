@@ -27,6 +27,7 @@ namespace SUC.Infra.Data.PostgresSQL.Contexts
 
             modelBuilder.Entity<Usuario>(entity =>
             {
+                entity.HasIndex(u => u.Cpf).IsUnique();
                 entity.HasIndex(u => u.Email).IsUnique();
             });
         }
