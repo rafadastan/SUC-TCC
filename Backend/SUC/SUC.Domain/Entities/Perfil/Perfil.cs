@@ -1,4 +1,6 @@
-﻿using SUC.Domain.Enum;
+﻿using FluentValidation.Results;
+using SUC.Domain.Enum;
+using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,5 +17,9 @@ namespace SUC.Domain.Entities
         public string Description { get; set; }
         public bool Active { get; set; }
         public Usuario Usuario { get; set; }
+
+        public ValidationResult Validate
+            => new PerfilValidation()
+            .Validate(this);
     }
 }

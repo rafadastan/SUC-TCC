@@ -1,5 +1,7 @@
-﻿using SUC.Application.Commands.Perfil;
+﻿using MediatR;
+using SUC.Application.Commands.Perfil;
 using SUC.Application.Contracts.Perfil;
+using SUC.Domain.Contracts.Infra.Caching;
 using SUC.Domain.Models.Perfil;
 using System;
 using System.Collections.Generic;
@@ -11,29 +13,39 @@ namespace SUC.Application.Services.Perfil
 {
     public class PerfilApplicationService : IPerfilApplicationService
     {
-        public Task Create(PerfilCreateCommand command)
+        private readonly IMediator _mediator;
+        private readonly IPerfilCaching _perfilCaching;
+
+        public PerfilApplicationService(IMediator mediator,
+            IPerfilCaching perfilCaching)
         {
-            throw new NotImplementedException();
+            _mediator = mediator;
+            _perfilCaching = perfilCaching;
         }
 
-        public Task Update(PerfilUpdateCommand command)
+        public async Task Create(PerfilCreateCommand command)
         {
-            throw new NotImplementedException();
+            await _mediator.Send(command);
         }
 
-        public Task Delete(PerfilDeleteCommand command)
+        public async Task Update(PerfilUpdateCommand command)
         {
-            throw new NotImplementedException();
+            await _mediator.Send(command);
         }
 
-        public Task<List<PerfilModel>> GetAll()
+        public async Task Delete(PerfilDeleteCommand command)
         {
-            throw new NotImplementedException();
+            await _mediator.Send(command);
         }
 
-        public Task<PerfilModel> GetById(Guid id)
+        public async Task<List<PerfilModel>> GetAll()
         {
-            throw new NotImplementedException();
+            return await _perfilCaching.GetAll();
+        }
+
+        public async Task<PerfilModel> GetById(Guid id)
+        {
+            return await _perfilCaching.GetById(id);
         }
     }
 }

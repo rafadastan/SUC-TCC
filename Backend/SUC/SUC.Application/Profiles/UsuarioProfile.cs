@@ -14,10 +14,10 @@ namespace SUC.Application.Profiles
     {
         public UsuarioProfile()
         {
-            CreateMap<UsuarioCreateCommand, Usuario>();
-            CreateMap<UsuarioUpdateCommand, Usuario>();
-            CreateMap<UsuarioDeleteCommand, Usuario>();
-            CreateMap<UsuarioModel, Usuario>();
+            CreateMap<UsuarioCreateCommand, Usuario>().ReverseMap();
+            CreateMap<UsuarioUpdateCommand, Usuario>().ReverseMap();
+            CreateMap<UsuarioDeleteCommand, Usuario>().ReverseMap();
+            CreateMap<UsuarioModel, Usuario>().ReverseMap();
         }
     }
 }

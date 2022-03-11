@@ -9,5 +9,6 @@ namespace SUC.Application.Commands.Usuario
 {
     public class UsuarioDeleteCommand : IRequest
     {
+        public Guid Id { get; set; }
     }
 }

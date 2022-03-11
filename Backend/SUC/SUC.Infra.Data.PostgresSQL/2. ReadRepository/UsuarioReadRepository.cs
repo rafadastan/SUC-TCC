@@ -1,0 +1,35 @@
+﻿using Dapper;
+using SUC.Domain.Contracts.Infra.ReadRepository;
+using SUC.Domain.Entities;
+using SUC.Domain.Models.Usuario;
+using SUC.Infra.Data.PostgresSQL.Contexts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SUC.Infra.Data.PostgresSQL_ReadRepository
+{
+    public class UsuarioReadRepository : IUsuarioReadRepository
+    {
+        private DbSession _session;
+
+        public UsuarioReadRepository(DbSession session)
+        {
+            _session = session;
+        }
+
+        public async Task<UsuarioModel> Get(string cpf, string senha)
+        {
+            var query = await _session.Connection.Query(@"
+                SELECT * FROM Usuario where Cpf = @Cpf;", 
+                new 
+                {
+                    Cpf = cpf
+                }).FirstOrDefault();
+
+            return query;
+        }
+    }
+}

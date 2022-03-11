@@ -8,9 +8,11 @@ using SUC.Application.Services.Usuario;
 using SUC.CrossCutting.Cryptography;
 using SUC.Domain.Contracts.Cryptography;
 using SUC.Domain.Contracts.Infra.Caching;
+using SUC.Domain.Contracts.Infra.ReadRepository;
 using SUC.Domain.Contracts.Infra.Repository;
 using SUC.Infra.Data.MongoDB.Caching;
 using SUC.Infra.Data.PostgresSQL._3._Repository;
+using SUC.Infra.Data.PostgresSQL_ReadRepository;
 using SUC.Infra.Data.PostgresSQL_Repository;
 using System;
 using System.Collections.Generic;
@@ -41,6 +43,8 @@ namespace SUC.CrossCutting.IOC
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IUsuarioRepository, UsuarioRepository>();
             services.AddTransient<IPerfilRepository, PerfilRepository>();
+
+            services.AddTransient<IUsuarioReadRepository, UsuarioReadRepository>();
 
             #endregion
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using SUC.Domain.Validations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,5 +19,8 @@ namespace SUC.Domain.Entities
         public DateTime Modified { get; set; }
         public DateTime LastLogin { get; set; }
         public List<Perfil> Perfis { get; set; }
+
+        public ValidationResult Validate 
+            => new UsuarioValidation().Validate(this);
     }
 }

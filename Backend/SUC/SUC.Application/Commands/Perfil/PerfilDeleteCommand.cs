@@ -9,5 +9,6 @@ namespace SUC.Application.Commands.Perfil
 {
     public class PerfilDeleteCommand : IRequest
     {
+        public Guid Id { get; set; }
     }
 }
