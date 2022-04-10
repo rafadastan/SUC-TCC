@@ -40,6 +40,8 @@ namespace SUC.Api
 
             services.AddAutoMapper(assemblies);
             services.AddMediatR(assemblies);
+
+            services.AddSwaggerGenNewtonsoftSupport();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,8 +54,9 @@ namespace SUC.Api
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
+            JwtConfiguration.UseJwt(app);
             CorsConfiguration.UseCors(app);
             SwaggerConfiguration.UseSwagger(app);
             app.UseEndpoints(endpoints =>

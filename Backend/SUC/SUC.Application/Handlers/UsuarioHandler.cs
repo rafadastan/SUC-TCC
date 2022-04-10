@@ -42,7 +42,6 @@ namespace SUC.Application.Handlers
                     case ActionNotification.Delete:
                         _usuarioCaching.Delete(usuario);
                         break;
-
                 }
             }); 
         }

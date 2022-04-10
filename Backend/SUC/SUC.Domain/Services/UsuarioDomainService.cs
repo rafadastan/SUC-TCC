@@ -34,5 +34,12 @@ namespace SUC.Domain.Services
 
             return await _usuarioReadRepository.Get(cpf, senha);
         }
+
+        public override Task Create(Usuario entity)
+        {
+            entity.Senha = _encrypt.Encrypt(entity.Senha);
+
+            return Task.FromResult(base.Create(entity));
+        }
     }
 }

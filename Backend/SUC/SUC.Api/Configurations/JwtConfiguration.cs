@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using SUC.Api.Security;
+using SUC.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;

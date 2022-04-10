@@ -36,6 +36,8 @@ namespace SUC.Application.RequestHandlers
         {
             var usuario = _mapper.Map<Usuario>(request);
 
+            usuario.Id = Guid.NewGuid();
+
             var result = usuario.Validate;
             if (!result.IsValid)
                 throw new ValidationException(result.Errors);

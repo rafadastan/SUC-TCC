@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using SUC.Api.Security;
 using SUC.Application.Commands.Auth;
 using SUC.Application.Contracts.Auth;
+using SUC.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,7 +41,7 @@ namespace SUC.Api.Controllers
                     Usuario = athentication,
                     AccessToken = new
                     {
-                        BearerToken = _jwtToken.GenerateToken(athentication.Cpf),
+                        BearerToken = _jwtToken.GenerateToken(athentication.Email),
                         Expiration = DateTime.Now.AddDays(1)
                     }
                 });

@@ -25,6 +25,7 @@ namespace SUC.Api.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         [ProducesResponseType(typeof(UsuarioCreateCommand),200)]
         [ProducesResponseType(typeof(BadRequestResult),400)]
         [ProducesResponseType(typeof(BadHttpRequestException),500)]
@@ -33,7 +34,11 @@ namespace SUC.Api.Controllers
             try
             {
                 await _usuarioAppService.Create(command);
-                return StatusCode(201, new { Message = "Usuario criado com sucesso" });
+                return StatusCode(201, new 
+                { 
+                    Message = "Usuario criado com sucesso", 
+                    Usuario = command
+                });
             }
             catch (ValidationException e)
             {
@@ -54,7 +59,11 @@ namespace SUC.Api.Controllers
             try
             {
                 await _usuarioAppService.Update(command);
-                return StatusCode(200, new { Message = "Usuario atualizado com sucesso." });
+                return StatusCode(200, new 
+                { 
+                    Message = "Usuario atualizado com sucesso.",
+                    Usuario = command
+                });
             }
             catch (ValidationException e)
             {
