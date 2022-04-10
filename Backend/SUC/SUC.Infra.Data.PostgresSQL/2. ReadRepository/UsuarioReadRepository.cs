@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using SUC.Domain.Contracts.Infra.ReadRepository;
 using SUC.Domain.Entities;
+using SUC.Domain.Models;
 using SUC.Domain.Models.Usuario;
 using SUC.Infra.Data.PostgresSQL.Contexts;
 using System;
@@ -22,14 +23,15 @@ namespace SUC.Infra.Data.PostgresSQL_ReadRepository
 
         public async Task<UsuarioModel> Get(string cpf, string senha)
         {
-            var query = await _session.Connection.Query(@"
-                SELECT * FROM Usuario where Cpf = @Cpf;", 
+            var query = await _session.Connection.QueryAsync<UsuarioModel>(@"
+                SELECT * FROM ""Usuario"" u where u.""Cpf"" = @Cpf AND u.""Senha"" = @Senha;", 
                 new 
                 {
-                    Cpf = cpf
-                }).FirstOrDefault();
+                    Cpf = cpf,
+                    Senha = senha
+                });
 
-            return query;
+            return query.FirstOrDefault();
         }
     }
 }

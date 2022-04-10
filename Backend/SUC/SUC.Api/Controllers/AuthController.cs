@@ -46,7 +46,12 @@ namespace SUC.Api.Controllers
                 });
             }
 
-            throw new Exception("Acesso Negado. Usuário não encontrado.");                    
+            //throw new Exception("Acesso Negado. Usuário não encontrado.");
+
+            return StatusCode(404, new
+            {
+                Message = "Acesso Negado. Usuário não encontrado."
+            });
         }
     }
 }
