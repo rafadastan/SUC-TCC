@@ -20,7 +20,7 @@ namespace SUC.Infra.Data.PostgresSQL.Contexts
 
             var root = configurationBuilder.Build();
             var connectionString = root.GetSection("ConnectionStrings")
-                .GetSection("BDTotvs").Value;
+                .GetSection("SUC_BD").Value;
 
             //instanciar a classe SqlContext
             var builder = new DbContextOptionsBuilder<SqlContext>();

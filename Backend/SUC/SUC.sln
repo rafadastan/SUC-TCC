@@ -53,6 +53,7 @@ Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Description = suc
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{4CEAAAEF-2C71-4B16-AA06-C460FDC96EE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU

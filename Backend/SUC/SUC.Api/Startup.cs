@@ -36,8 +36,10 @@ namespace SUC.Api
             SwaggerConfiguration.AddSwagger(services);
             MongoDBSetup.AddMongoDB(services, Configuration);
 
-            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddMediatR(AppDomain.CurrentDomain.GetAssemblies());
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+
+            services.AddAutoMapper(assemblies);
+            services.AddMediatR(assemblies);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +55,7 @@ namespace SUC.Api
             app.UseAuthorization();
 
             CorsConfiguration.UseCors(app);
-
+            SwaggerConfiguration.UseSwagger(app);
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

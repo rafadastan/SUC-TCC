@@ -1,0 +1,9 @@
+FROM microsoft/dotnet:latest
+
+LABEL maintainer="suc-api"
+
+
+ENV ASPNETCORE_URLS http://+:80
+EXPOSE 80
+
+ENTRYPOINT ["dotnet", "Masterpiece.Web.dll"]

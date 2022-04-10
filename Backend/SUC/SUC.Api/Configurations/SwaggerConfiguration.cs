@@ -60,7 +60,7 @@ namespace SUC.Api.Configurations
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sistema Unificado ao Cidadão");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "SUC");
             });
         }
     }

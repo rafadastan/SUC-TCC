@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SUC.Security.UserContext
 {
-    public class UserContext : IUserContext
+    public class UserHttpContext : IUserContext
     {
         private readonly IHttpContextAccessor _accessor;
 
-        public UserContext(IHttpContextAccessor accessor)
+        public UserHttpContext(IHttpContextAccessor accessor)
         {
             _accessor = accessor;
         }
