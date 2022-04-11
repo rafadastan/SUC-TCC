@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Infra.Data.PostgresSQL._3._Repository
 {
-    public class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork, IDisposable
     {
         private readonly SqlContext _sqlContext;
         private IDbContextTransaction _transaction;
@@ -22,7 +22,9 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
 
         public void BeginTransaction()
         {
-            _transaction = _sqlContext.Database.BeginTransaction();
+            _transaction = _sqlContext
+                .Database
+                .BeginTransaction();
         }
 
         public void Commit()
@@ -33,6 +35,16 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
         public void Rollback()
         {
             _transaction.Rollback();
+        }
+
+        public void Save()
+        {
+            _sqlContext.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _transaction.Dispose();
         }
 
         public IUsuarioRepository UsuarioRepository => new UsuarioRepository(_sqlContext);

@@ -13,10 +13,9 @@ namespace SUC.Domain.Entities
     {
         public Guid Id { get; set; }
         public PerfilEnum PerfilUsuario { get; set; }
-        public Guid IdUsuario { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
-        public Usuario Usuario { get; set; }
+        public List<UsuarioXPerfil> UsuarioXPerfilList { get; set; }
 
         public ValidationResult Validate
             => new PerfilValidation()

@@ -13,6 +13,7 @@ namespace SUC.Domain.Contracts.Infra.Repository
         void BeginTransaction();
         void Commit();
         void Rollback();
+        void Save();
 
         #endregion
 

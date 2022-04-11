@@ -39,7 +39,13 @@ namespace SUC.Domain.Services
         {
             entity.Senha = _encrypt.Encrypt(entity.Senha);
 
-            return Task.FromResult(base.Create(entity));
+            var usuario = _unitOfWork
+                .UsuarioRepository
+                .Create(entity);
+
+            _unitOfWork.Save();
+
+            return Task.FromResult(usuario);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SUC.Infra.Data.PostgresSQL.Contexts;
@@ -9,9 +10,10 @@ using SUC.Infra.Data.PostgresSQL.Contexts;
 namespace SUC.Infra.Data.PostgresSQL.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    partial class SqlContextModelSnapshot : ModelSnapshot
+    [Migration("20220411030213_adicionando-relacionamento-perfil")]
+    partial class adicionandorelacionamentoperfil
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,7 +41,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("perfil");
+                    b.ToTable("Perfil");
                 });
 
             modelBuilder.Entity("SUC.Domain.Entities.Usuario", b =>
@@ -90,7 +92,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("usuario");
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("SUC.Domain.Entities.UsuarioXPerfil", b =>

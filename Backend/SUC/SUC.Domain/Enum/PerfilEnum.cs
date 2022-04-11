@@ -9,6 +9,8 @@ namespace SUC.Domain.Enum
     public enum PerfilEnum
     {
         Administrador = 1,
-        Operador = 2
+        Operador = 2,
+        Cidadao = 3,
+        OperadorCampo = 4
     }
 }

@@ -14,7 +14,7 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
         public void Configure(EntityTypeBuilder<Usuario> builder)
         {
             //nome da tabela
-            builder.ToTable("Usuario");
+            builder.ToTable("usuario");
 
             //chave primária
             builder.HasKey(u => u.Id);

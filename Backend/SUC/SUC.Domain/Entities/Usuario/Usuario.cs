@@ -18,7 +18,7 @@ namespace SUC.Domain.Entities
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
         public DateTime LastLogin { get; set; }
-        public List<Perfil> Perfis { get; set; }
+        public List<UsuarioXPerfil> UsuarioXPerfilList { get; set; }
 
         public ValidationResult Validate 
             => new UsuarioValidation().Validate(this);

@@ -36,6 +36,8 @@ namespace SUC.Application.RequestHandlers
         {
             var perfil = _mapper.Map<Perfil>(request);
 
+            perfil.Id = Guid.NewGuid();
+
             var result = perfil.Validate;
             if(!result.IsValid)
                 throw new ValidationException(result.Errors);

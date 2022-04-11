@@ -14,7 +14,7 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
         public void Configure(EntityTypeBuilder<Perfil> builder)
         {
             //nome da tabela
-            builder.ToTable("Perfil");
+            builder.ToTable("perfil");
 
             //chave primária
             builder.HasKey(u => u.Id);
@@ -27,18 +27,6 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
                 .HasColumnName("PerfilUsuario")
                 .HasMaxLength(150)
                 .IsRequired();
-
-            builder.Property(f => f.IdUsuario)
-                .HasColumnName("UsuarioId")
-                .IsRequired();
-
-            #region Relacionamentos
-
-            builder.HasOne(f => f.Usuario)
-                .WithMany(e => e.Perfis)
-                .HasForeignKey(f => f.IdUsuario);
-
-            #endregion
         }
     }
 }
