@@ -23,9 +23,9 @@ namespace SUC.Application.Services.Auth
             _mapper = mapper;
         }
 
-        public Task<AuthModel> Authentication(AuthenticationCommand authenticationModel)
+        public async Task<AuthModel> Authentication(AuthenticationCommand authenticationModel)
         {
-            var auth = _auth.Authentication(authenticationModel.Cpf, authenticationModel.Senha);
+            var auth = await _auth.Authentication(authenticationModel.Cpf, authenticationModel.Senha);
 
             return auth;
         }

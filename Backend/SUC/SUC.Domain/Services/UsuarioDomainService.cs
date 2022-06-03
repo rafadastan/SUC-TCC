@@ -35,17 +35,15 @@ namespace SUC.Domain.Services
             return await _usuarioReadRepository.Get(cpf, senha);
         }
 
-        public override Task Create(Usuario entity)
+        public override async Task Create(Usuario entity)
         {
             entity.Senha = _encrypt.Encrypt(entity.Senha);
 
-            var usuario = _unitOfWork
-                .UsuarioRepository
-                .Create(entity);
+            await _unitOfWork
+            .UsuarioRepository
+            .Create(entity);
 
             _unitOfWork.Save();
-
-            return Task.FromResult(usuario);
         }
     }
 }

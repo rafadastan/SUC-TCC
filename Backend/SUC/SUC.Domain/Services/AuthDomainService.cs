@@ -1,4 +1,5 @@
 ﻿using SUC.Domain.Contracts.Auth;
+using SUC.Domain.Contracts.Cryptography;
 using SUC.Domain.Contracts.Infra.ReadRepository;
 using SUC.Domain.Contracts.Infra.Repository;
 using SUC.Domain.Entities;
@@ -16,16 +17,21 @@ namespace SUC.Domain.Services.Auth
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IUsuarioReadRepository _usuarioReadRepository;
-        public AuthDomainService(IUnitOfWork unitOfWork, 
-            IUsuarioReadRepository usuarioReadRepository)
+        private readonly IMD5Cryptoghaphy _encrypt;
+
+        public AuthDomainService(IUnitOfWork unitOfWork,
+            IUsuarioReadRepository usuarioReadRepository, IMD5Cryptoghaphy encrypt)
             : base(unitOfWork.UsuarioRepository)
         {
             _unitOfWork = unitOfWork;
             _usuarioReadRepository = usuarioReadRepository;
+            _encrypt = encrypt;
         }
 
         public async Task<AuthModel> Authentication(string cpf, string senha)
-        {         
+        {
+            senha = _encrypt.Encrypt(senha);
+
             var authentication = await _usuarioReadRepository.Get(cpf, senha);
 
             if (authentication != null)

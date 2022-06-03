@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Infra.Data.PostgresSQL._3._Repository
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly SqlContext _sqlContext;
         private IDbContextTransaction _transaction;
@@ -42,13 +42,12 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
             _sqlContext.SaveChanges();
         }
 
+        public IUsuarioRepository UsuarioRepository => new UsuarioRepository(_sqlContext);
+        public IPerfilRepository PerfilRepository => new PerfilRepository(_sqlContext);
+
         public void Dispose()
         {
             _transaction.Dispose();
         }
-
-        public IUsuarioRepository UsuarioRepository => new UsuarioRepository(_sqlContext);
-
-        public IPerfilRepository PerfilRepository => new PerfilRepository(_sqlContext);
     }
 }
