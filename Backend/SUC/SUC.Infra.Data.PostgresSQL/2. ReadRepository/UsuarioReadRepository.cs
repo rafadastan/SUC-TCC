@@ -23,8 +23,13 @@ namespace SUC.Infra.Data.PostgresSQL_ReadRepository
 
         public async Task<UsuarioModel> Get(string cpf, string senha)
         {
-            var query = await _session.Connection.QueryAsync<UsuarioModel>(@"
-                SELECT * FROM usuario u where u.""Cpf"" = @Cpf AND u.""Senha"" = @Senha;", 
+            var query = await _session
+                .Connection
+                .QueryAsync<UsuarioModel>(@"
+                    SELECT * 
+                        FROM usuario u 
+                    WHERE u.""Cpf"" = @Cpf 
+                    AND u.""Senha"" = @Senha", 
                 new 
                 {
                     Cpf = cpf,

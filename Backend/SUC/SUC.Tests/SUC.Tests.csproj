@@ -19,4 +19,12 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="1. Api\" />
+    <Folder Include="2. Application\" />
+    <Folder Include="3. Domain\" />
+    <Folder Include="4. Infra\" />
+    <Folder Include="5. CrossCutting\" />
+  </ItemGroup>
+
 </Project>

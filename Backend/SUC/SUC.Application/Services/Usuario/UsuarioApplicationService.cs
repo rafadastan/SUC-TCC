@@ -16,7 +16,9 @@ namespace SUC.Application.Services.Usuario
         private readonly IMediator _mediator;
         private readonly IUsuarioCaching _usuarioCaching;
 
-        public UsuarioApplicationService(IMediator mediator, IUsuarioCaching usuarioCaching)
+        public UsuarioApplicationService (
+            IMediator mediator, 
+            IUsuarioCaching usuarioCaching)
         {
             _mediator = mediator;
             _usuarioCaching = usuarioCaching;
