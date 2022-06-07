@@ -1,0 +1,9 @@
+MOBILE
+Munícipe: https://www.figma.com/proto/oir9zq5ftFEEozUGBDyUIo/Prototipo?page-id=405%3A1261&node-id=508%3A1230&viewport=241%2C48%2C0.06&scaling=min-zoom&starting-point-node-id=508%3A1230&show-proto-sidebar=1
+Operador: https://www.figma.com/proto/oir9zq5ftFEEozUGBDyUIo/Prototipo?page-id=405%3A1261&node-id=532%3A2655&viewport=241%2C48%2C0.06&scaling=min-zoom&starting-point-node-id=532%3A2655&show-proto-sidebar=1
+Admin: https://www.figma.com/proto/oir9zq5ftFEEozUGBDyUIo/Prototipo?page-id=405%3A1261&node-id=549%3A6580&viewport=241%2C48%2C0.06&scaling=min-zoom&starting-point-node-id=549%3A6580&show-proto-sidebar=1
+
+WEB
+Munícipe: https://www.figma.com/proto/oir9zq5ftFEEozUGBDyUIo/Prototipo?page-id=405%3A1260&node-id=536%3A5522&viewport=241%2C48%2C0.05&scaling=min-zoom&starting-point-node-id=536%3A5522&show-proto-sidebar=1
+Operador: https://www.figma.com/proto/oir9zq5ftFEEozUGBDyUIo/Prototipo?page-id=405%3A1260&node-id=541%3A3319&viewport=241%2C48%2C0.05&scaling=scale-down&starting-point-node-id=541%3A3319&show-proto-sidebar=1
+Admin: https://www.figma.com/proto/oir9zq5ftFEEozUGBDyUIo/Prototipo?page-id=405%3A1260&node-id=536%3A5572&viewport=241%2C48%2C0.05&scaling=scale-down&starting-point-node-id=536%3A5572&show-proto-sidebar=1
