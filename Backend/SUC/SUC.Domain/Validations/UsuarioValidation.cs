@@ -12,7 +12,7 @@ namespace SUC.Domain.Validations
     {
         public UsuarioValidation()
         {
-            RuleFor(u => u.Id)
+            RuleFor(u => u.IdUsuario)
                 .NotEmpty()
                 .WithMessage("O Id do usuário não pode ser vazio");
 

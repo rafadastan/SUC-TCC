@@ -11,11 +11,12 @@ namespace SUC.Domain.Entities
 {
     public class Perfil
     {
-        public Guid Id { get; set; }
+        public Guid IdPerfil { get; set; }
         public PerfilEnum PerfilUsuario { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
-        public List<UsuarioXPerfil> UsuarioXPerfilList { get; set; }
+
+        public Usuario Usuario { get; set; }
 
         public ValidationResult Validate
             => new PerfilValidation()

@@ -12,8 +12,32 @@ namespace SUC.Domain.Enum
         {
             Administrador = 1,
             Operador = 2,
-            Cidadao = 3,
+            Municipe = 3,
             OperadorCampo = 4
+        }
+
+        public enum Solicitacao
+        {
+            Aberto,
+            Aguardando,
+            Andamento,
+            Finalizado
+        }
+
+        public enum Atendimento
+        {
+            Aberto,
+            Aguardando,
+            Andamento,
+            Finalizado
+        }
+
+        public enum Chamado
+        {
+            Aberto,
+            Aguardando,
+            Andamento,
+            Finalizado
         }
     }
 }

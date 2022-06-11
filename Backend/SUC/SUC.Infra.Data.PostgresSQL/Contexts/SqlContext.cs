@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SUC.Domain.Entities;
+using SUC.Domain.Entities.Telefone;
 using SUC.Infra.Data.PostgresSQL.Mappings;
 using System;
 using System.Collections.Generic;
@@ -13,17 +14,17 @@ namespace SUC.Infra.Data.PostgresSQL.Contexts
     {
         public SqlContext(DbContextOptions<SqlContext> options)
             : base(options)
-        {
-
-        }
+        {   }
 
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Perfil> Perfils { get; set; }
+        public DbSet<Perfil> Perfis { get; set; }
+        public DbSet<Contato> Contatos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new PerfilMap());
+            modelBuilder.ApplyConfiguration(new ContatoMap());
 
             modelBuilder.Entity<Usuario>(entity =>
             {

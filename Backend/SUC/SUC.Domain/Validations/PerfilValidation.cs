@@ -12,7 +12,7 @@ namespace SUC.Domain.Validations
     {
         public PerfilValidation()
         {
-            RuleFor(p => p.Id)
+            RuleFor(p => p.IdPerfil)
                 .NotEmpty()
                 .WithMessage("Id do perfil é obrigatório");
 

@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Entities.Telefone
 {
-    public class Telefone
+    public class Contato
     {
-        public Guid IdTelefone { get; set; }
+        public Guid IdContato { get; set; }
+        public Guid? LastModifierUserId { get; set; }
         public string Numero { get; set; }
         public string DDDNumero { get; set; }
         public DateTime CreationDate { get; set; }
         public Guid? CreatorUserId { get; set; }
         public DateTime? LastModificationDate { get; set; }
-        public Guid? LastModifierUserId { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

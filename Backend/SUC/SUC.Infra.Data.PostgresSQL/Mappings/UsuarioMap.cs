@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using SUC.Domain.Entities;
+using SUC.Domain.Entities.Telefone;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,11 +18,17 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
             builder.ToTable("usuario");
 
             //chave primária
-            builder.HasKey(u => u.Id);
+            builder.HasKey(u => u.IdUsuario);
 
             //mapeamento dos campos
-            builder.Property(u => u.Id)
-                .HasColumnName("Id");
+            builder.Property(u => u.IdUsuario)
+                .HasColumnName("IdUsuario");
+
+            builder.Property(u => u.IdPerfil)
+                .HasColumnName("IdPerfil");
+
+            builder.Property(u => u.IdContato)
+                .HasColumnName("IdContato");
 
             builder.Property(u => u.Nome)
                 .HasColumnName("Nome")
@@ -53,6 +60,13 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
                 .HasColumnType("date")
                 .IsRequired();
 
+            builder.HasOne(c => c.Contato)
+                .WithOne(c => c.Usuario)
+                .HasForeignKey<Contato>(c => c.IdContato);
+
+            builder.HasOne(c => c.Perfil)
+                .WithOne(c => c.Usuario)
+                .HasForeignKey<Perfil>(c => c.IdPerfil);
         }
     }
 }

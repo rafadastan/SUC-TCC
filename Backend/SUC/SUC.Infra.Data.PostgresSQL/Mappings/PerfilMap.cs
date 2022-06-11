@@ -17,15 +17,23 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
             builder.ToTable("perfil");
 
             //chave primária
-            builder.HasKey(u => u.Id);
+            builder.HasKey(u => u.IdPerfil);
 
             //mapeamento dos campos
-            builder.Property(u => u.Id)
+            builder.Property(u => u.IdPerfil)
                 .HasColumnName("Id");
 
             builder.Property(u => u.PerfilUsuario)
                 .HasColumnName("PerfilUsuario")
+                .HasMaxLength(150);
+
+            builder.Property(u => u.Description)
+                .HasColumnName("Descricao")
                 .HasMaxLength(150)
+                .IsRequired();
+
+            builder.Property(u => u.Active)
+                .HasColumnName("Ativo")
                 .IsRequired();
         }
     }
