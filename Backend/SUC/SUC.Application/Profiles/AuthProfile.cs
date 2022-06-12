@@ -13,7 +13,7 @@ namespace SUC.Application.Profiles
     {
         public AuthProfile()
         {
-            CreateMap<AuthenticationDomainCommand, AuthenticationCommand>().ReverseMap();
+            CreateMap<AuthenticationDomainModel, AuthenticationCommand>().ReverseMap();
         }
     }
 }

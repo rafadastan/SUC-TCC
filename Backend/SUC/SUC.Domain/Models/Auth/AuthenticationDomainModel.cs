@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Models.Auth
 {
-    public class AuthenticationDomainCommand
+    public class AuthenticationDomainModel
     {
         public string Cpf { get; set; }
         public string Senha { get; set; }
