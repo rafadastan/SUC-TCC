@@ -21,7 +21,8 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
 
             //mapeamento dos campos
             builder.Property(u => u.IdPerfil)
-                .HasColumnName("Id");
+                .HasColumnName("IdPerfil")
+                .IsRequired();
 
             builder.Property(u => u.PerfilUsuario)
                 .HasColumnName("PerfilUsuario")

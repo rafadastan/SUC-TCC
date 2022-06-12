@@ -9,6 +9,7 @@ namespace SUC.Domain.Entities.Telefone
     public class Contato
     {
         public Guid IdContato { get; set; }
+        public Guid? IdUsuario { get; set; }
         public Guid? LastModifierUserId { get; set; }
         public string Numero { get; set; }
         public string DDDNumero { get; set; }

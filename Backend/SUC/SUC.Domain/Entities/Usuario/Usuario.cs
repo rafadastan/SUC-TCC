@@ -6,13 +6,13 @@ using SUC.Domain.Entities.Telefone;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SUC.Domain.Entities.EntityEndereco;
 
 namespace SUC.Domain.Entities
 {
     public class Usuario
     {
         public Guid IdUsuario { get; set; }
-        public Guid IdContato { get; set; }
         public Guid IdPerfil { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
@@ -24,6 +24,7 @@ namespace SUC.Domain.Entities
         public DateTime LastLogin { get; set; }
         public Contato Contato { get; set; }
         public Perfil Perfil { get; set; }
+        public Endereco Endereco { get; set; }
         public ValidationResult Validate 
             => new UsuarioValidation().Validate(this);
     }

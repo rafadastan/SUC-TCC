@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SUC.Domain.Entities.Endereco
+namespace SUC.Domain.Entities.EntityEndereco
 {
     public class Endereco
     {
         public Guid IdEndereco { get; set; }
-        public string NomeRua { get; set; }
-        public string NumeroRua { get; set; }
+        public Guid? IdUsuario { get; set; }
+        public string EnderecoNome { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
         public string Bairro { get; set; }
@@ -19,5 +19,7 @@ namespace SUC.Domain.Entities.Endereco
         public Guid? CreatorUserId { get; set; }
         public DateTime? LastModificationDate { get; set; }
         public Guid? LastModifierUserId { get; set; }
+
+        public Usuario Usuario { get; set; }
     }
 }

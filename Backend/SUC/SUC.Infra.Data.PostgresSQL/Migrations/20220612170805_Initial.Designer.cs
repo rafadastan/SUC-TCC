@@ -10,8 +10,8 @@ using SUC.Infra.Data.PostgresSQL.Contexts;
 namespace SUC.Infra.Data.PostgresSQL.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220611195516_Adicionando-relacionamento-11-06")]
-    partial class Adicionandorelacionamento1106
+    [Migration("20220612170805_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,8 +24,9 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
             modelBuilder.Entity("SUC.Domain.Entities.Perfil", b =>
                 {
                     b.Property<Guid>("IdPerfil")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
-                        .HasColumnName("Id");
+                        .HasColumnName("IdPerfil");
 
                     b.Property<bool>("Active")
                         .HasColumnType("boolean")
@@ -42,10 +43,12 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("PerfilUsuario");
 
+                    b.Property<Guid?>("UsuarioIdUsuario")
+                        .HasColumnType("uuid");
+
                     b.HasKey("IdPerfil");
 
-                    b.HasIndex("IdPerfil")
-                        .IsUnique();
+                    b.HasIndex("UsuarioIdUsuario");
 
                     b.ToTable("perfil");
                 });
@@ -53,6 +56,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
             modelBuilder.Entity("SUC.Domain.Entities.Telefone.Contato", b =>
                 {
                     b.Property<Guid>("IdContato")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid")
                         .HasColumnName("IdContato");
 
@@ -81,10 +85,12 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("text")
                         .HasColumnName("Numero");
 
+                    b.Property<Guid?>("UsuarioIdUsuario")
+                        .HasColumnType("uuid");
+
                     b.HasKey("IdContato");
 
-                    b.HasIndex("IdContato")
-                        .IsUnique();
+                    b.HasIndex("UsuarioIdUsuario");
 
                     b.ToTable("contato");
                 });
@@ -148,16 +154,18 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
+                    b.HasIndex("IdContato");
+
+                    b.HasIndex("IdPerfil");
+
                     b.ToTable("usuario");
                 });
 
             modelBuilder.Entity("SUC.Domain.Entities.Perfil", b =>
                 {
                     b.HasOne("SUC.Domain.Entities.Usuario", "Usuario")
-                        .WithOne("Perfil")
-                        .HasForeignKey("SUC.Domain.Entities.Perfil", "IdPerfil")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("UsuarioIdUsuario");
 
                     b.Navigation("Usuario");
                 });
@@ -165,16 +173,26 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
             modelBuilder.Entity("SUC.Domain.Entities.Telefone.Contato", b =>
                 {
                     b.HasOne("SUC.Domain.Entities.Usuario", "Usuario")
-                        .WithOne("Contato")
-                        .HasForeignKey("SUC.Domain.Entities.Telefone.Contato", "IdContato")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("UsuarioIdUsuario");
 
                     b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("SUC.Domain.Entities.Usuario", b =>
                 {
+                    b.HasOne("SUC.Domain.Entities.Telefone.Contato", "Contato")
+                        .WithMany()
+                        .HasForeignKey("IdContato")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("SUC.Domain.Entities.Perfil", "Perfil")
+                        .WithMany()
+                        .HasForeignKey("IdPerfil")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.Navigation("Contato");
 
                     b.Navigation("Perfil");

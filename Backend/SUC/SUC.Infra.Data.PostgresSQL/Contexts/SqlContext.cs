@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SUC.Domain.Entities;
+using SUC.Domain.Entities.EntityEndereco;
 using SUC.Domain.Entities.Telefone;
 using SUC.Infra.Data.PostgresSQL.Mappings;
 using System;
@@ -19,12 +20,14 @@ namespace SUC.Infra.Data.PostgresSQL.Contexts
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Perfil> Perfis { get; set; }
         public DbSet<Contato> Contatos { get; set; }
+        public DbSet<Endereco> Enderecos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new PerfilMap());
             modelBuilder.ApplyConfiguration(new ContatoMap());
+            modelBuilder.ApplyConfiguration(new EnderecoMap());
 
             modelBuilder.Entity<Usuario>(entity =>
             {

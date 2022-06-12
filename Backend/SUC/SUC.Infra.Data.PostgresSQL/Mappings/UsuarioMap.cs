@@ -22,13 +22,12 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
 
             //mapeamento dos campos
             builder.Property(u => u.IdUsuario)
-                .HasColumnName("IdUsuario");
+                .HasColumnName("IdUsuario")
+                .IsRequired();
 
             builder.Property(u => u.IdPerfil)
-                .HasColumnName("IdPerfil");
-
-            builder.Property(u => u.IdContato)
-                .HasColumnName("IdContato");
+                .HasColumnName("IdPerfil")
+                .IsRequired();
 
             builder.Property(u => u.Nome)
                 .HasColumnName("Nome")
@@ -60,13 +59,10 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
                 .HasColumnType("date")
                 .IsRequired();
 
-            builder.HasOne(c => c.Contato)
-                .WithOne(c => c.Usuario)
-                .HasForeignKey<Contato>(c => c.IdContato);
-
             builder.HasOne(c => c.Perfil)
-                .WithOne(c => c.Usuario)
-                .HasForeignKey<Perfil>(c => c.IdPerfil);
+                .WithMany()
+                .HasForeignKey(x=>x.IdPerfil)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }
