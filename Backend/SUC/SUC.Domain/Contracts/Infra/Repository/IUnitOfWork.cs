@@ -21,6 +21,8 @@ namespace SUC.Domain.Contracts.Infra.Repository
 
         IUsuarioRepository UsuarioRepository { get; }
         IPerfilRepository PerfilRepository { get; }
+        IContatoRepository ContatoRepository { get; }
+        IEnderecoRepository EnderecoRepository { get; }
 
         #endregion
     }

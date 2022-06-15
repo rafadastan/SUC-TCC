@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Entities.Indices
 {
-    public class Indices
+    public class Indice
     {
-        public Guid IdIndices { get; set; }
+        public Guid IdIndice { get; set; }
         public int Percentual { get; set; }
         public int Media { get; set; }
     }

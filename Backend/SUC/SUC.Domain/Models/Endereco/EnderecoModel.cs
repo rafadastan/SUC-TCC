@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SUC.Domain.Entities.Informacoes
+namespace SUC.Domain.Models.Endereco
 {
-    public class Informacoes
+    public class EnderecoModel
     {
-        public Guid IdInformacoes { get; set; }
     }
 }

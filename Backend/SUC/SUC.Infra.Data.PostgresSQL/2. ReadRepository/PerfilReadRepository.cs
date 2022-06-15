@@ -3,6 +3,7 @@ using SUC.Domain.Contracts.Infra.ReadRepository;
 using SUC.Domain.Enum;
 using SUC.Domain.Models.Perfil;
 using SUC.Infra.Data.PostgresSQL.Contexts;
+using SUC.Infra.Data.PostgresSQL_ReadRepository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Infra.Data.PostgresSQL._2._ReadRepository
 {
-    public class PerfilReadRepository : IPerfilReadRepository
+    public class PerfilReadRepository : BaseReadRepository<PerfilModel, Guid>, IPerfilReadRepository
     {
         private DbSession _session;
 

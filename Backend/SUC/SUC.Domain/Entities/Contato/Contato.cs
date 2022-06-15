@@ -16,6 +16,6 @@ namespace SUC.Domain.Entities.Telefone
         public Guid? CreatorUserId { get; set; }
         public DateTime? LastModificationDate { get; set; }
 
-        //public Usuario Usuario { get; set; }
+        public Usuario Usuario { get; set; }
     }
 }

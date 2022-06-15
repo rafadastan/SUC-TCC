@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Infra.Data.PostgresSQL_ReadRepository
 {
-    public class UsuarioReadRepository : IUsuarioReadRepository
+    public class UsuarioReadRepository : BaseReadRepository<UsuarioModel, Guid>, IUsuarioReadRepository
     {
         private DbSession _session;
 
