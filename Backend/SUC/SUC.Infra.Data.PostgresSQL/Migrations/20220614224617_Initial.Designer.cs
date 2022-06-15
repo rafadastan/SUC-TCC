@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SUC.Infra.Data.PostgresSQL.Contexts;
@@ -9,9 +10,10 @@ using SUC.Infra.Data.PostgresSQL.Contexts;
 namespace SUC.Infra.Data.PostgresSQL.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    partial class SqlContextModelSnapshot : ModelSnapshot
+    [Migration("20220614224617_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +69,12 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("LastModifierUserId");
 
+                    b.Property<Guid?>("UsuarioIdUsuario")
+                        .HasColumnType("uuid");
+
                     b.HasKey("IdEndereco");
+
+                    b.HasIndex("UsuarioIdUsuario");
 
                     b.ToTable("endereco");
                 });
@@ -131,7 +138,12 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("text")
                         .HasColumnName("Numero");
 
+                    b.Property<Guid?>("UsuarioIdUsuario")
+                        .HasColumnType("uuid");
+
                     b.HasKey("IdContato");
+
+                    b.HasIndex("UsuarioIdUsuario");
 
                     b.ToTable("contato");
                 });
@@ -146,7 +158,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("date")
                         .HasColumnName("Created");
 
@@ -156,11 +168,11 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("Email");
 
-                    b.Property<Guid?>("IdContato")
+                    b.Property<Guid>("IdContato")
                         .HasColumnType("uuid")
                         .HasColumnName("IdContato");
 
-                    b.Property<Guid?>("IdEndereco")
+                    b.Property<Guid>("IdEndereco")
                         .HasColumnType("uuid")
                         .HasColumnName("IdEndereco");
 
@@ -168,11 +180,11 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("IdPerfil");
 
-                    b.Property<DateTime?>("LastLogin")
+                    b.Property<DateTime>("LastLogin")
                         .HasColumnType("date")
                         .HasColumnName("LastLogin");
 
-                    b.Property<DateTime?>("Modified")
+                    b.Property<DateTime>("Modified")
                         .HasColumnType("date")
                         .HasColumnName("Modified");
 
@@ -182,6 +194,9 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("character varying(150)")
                         .HasColumnName("Nome");
 
+                    b.Property<Guid?>("PerfilIdPerfil")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Senha")
                         .IsRequired()
                         .HasMaxLength(50)
@@ -189,10 +204,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnName("Senha");
 
                     b.Property<string>("Sobrenome")
-                        .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("character varying(150)")
-                        .HasColumnName("Sobrenome");
+                        .HasColumnType("text");
 
                     b.HasKey("IdUsuario");
 
@@ -208,7 +220,27 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
 
                     b.HasIndex("IdPerfil");
 
+                    b.HasIndex("PerfilIdPerfil");
+
                     b.ToTable("usuario");
+                });
+
+            modelBuilder.Entity("SUC.Domain.Entities.EntityEndereco.Endereco", b =>
+                {
+                    b.HasOne("SUC.Domain.Entities.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioIdUsuario");
+
+                    b.Navigation("Usuario");
+                });
+
+            modelBuilder.Entity("SUC.Domain.Entities.Telefone.Contato", b =>
+                {
+                    b.HasOne("SUC.Domain.Entities.Usuario", "Usuario")
+                        .WithMany()
+                        .HasForeignKey("UsuarioIdUsuario");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("SUC.Domain.Entities.Usuario", b =>
@@ -216,24 +248,35 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.HasOne("SUC.Domain.Entities.Telefone.Contato", "Contato")
                         .WithMany()
                         .HasForeignKey("IdContato")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SUC.Domain.Entities.EntityEndereco.Endereco", "Endereco")
                         .WithMany()
                         .HasForeignKey("IdEndereco")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("SUC.Domain.Entities.Perfil", "Perfil")
                         .WithMany()
                         .HasForeignKey("IdPerfil")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("SUC.Domain.Entities.Perfil", null)
+                        .WithMany("ListaUsuario")
+                        .HasForeignKey("PerfilIdPerfil");
 
                     b.Navigation("Contato");
 
                     b.Navigation("Endereco");
 
                     b.Navigation("Perfil");
+                });
+
+            modelBuilder.Entity("SUC.Domain.Entities.Perfil", b =>
+                {
+                    b.Navigation("ListaUsuario");
                 });
 #pragma warning restore 612, 618
         }

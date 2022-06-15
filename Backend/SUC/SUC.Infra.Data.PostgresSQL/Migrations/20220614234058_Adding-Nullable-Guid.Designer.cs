@@ -10,8 +10,8 @@ using SUC.Infra.Data.PostgresSQL.Contexts;
 namespace SUC.Infra.Data.PostgresSQL.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    [Migration("20220612170805_Initial")]
-    partial class Initial
+    [Migration("20220614234058_Adding-Nullable-Guid")]
+    partial class AddingNullableGuid
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,59 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+            modelBuilder.Entity("SUC.Domain.Entities.EntityEndereco.Endereco", b =>
+                {
+                    b.Property<Guid>("IdEndereco")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid")
+                        .HasColumnName("IdEndereco");
+
+                    b.Property<string>("Bairro")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Bairro");
+
+                    b.Property<string>("CEP")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("CEP");
+
+                    b.Property<string>("Cidade")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Cidade");
+
+                    b.Property<DateTime>("CreationDate")
+                        .HasColumnType("timestamp without time zone")
+                        .HasColumnName("CreationDate");
+
+                    b.Property<Guid?>("CreatorUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("CreatorUserId");
+
+                    b.Property<string>("EnderecoNome")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("EnderecoNome");
+
+                    b.Property<string>("Estado")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Estado");
+
+                    b.Property<DateTime?>("LastModificationDate")
+                        .HasColumnType("timestamp without time zone")
+                        .HasColumnName("LastModificationDate");
+
+                    b.Property<Guid?>("LastModifierUserId")
+                        .HasColumnType("uuid")
+                        .HasColumnName("LastModifierUserId");
+
+                    b.HasKey("IdEndereco");
+
+                    b.ToTable("endereco");
+                });
 
             modelBuilder.Entity("SUC.Domain.Entities.Perfil", b =>
                 {
@@ -43,12 +96,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("integer")
                         .HasColumnName("PerfilUsuario");
 
-                    b.Property<Guid?>("UsuarioIdUsuario")
-                        .HasColumnType("uuid");
-
                     b.HasKey("IdPerfil");
-
-                    b.HasIndex("UsuarioIdUsuario");
 
                     b.ToTable("perfil");
                 });
@@ -85,12 +133,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("text")
                         .HasColumnName("Numero");
 
-                    b.Property<Guid?>("UsuarioIdUsuario")
-                        .HasColumnType("uuid");
-
                     b.HasKey("IdContato");
-
-                    b.HasIndex("UsuarioIdUsuario");
 
                     b.ToTable("contato");
                 });
@@ -105,7 +148,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("Created")
+                    b.Property<DateTime?>("Created")
                         .HasColumnType("date")
                         .HasColumnName("Created");
 
@@ -115,19 +158,23 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("Email");
 
-                    b.Property<Guid>("IdContato")
+                    b.Property<Guid?>("IdContato")
                         .HasColumnType("uuid")
                         .HasColumnName("IdContato");
+
+                    b.Property<Guid?>("IdEndereco")
+                        .HasColumnType("uuid")
+                        .HasColumnName("IdEndereco");
 
                     b.Property<Guid>("IdPerfil")
                         .HasColumnType("uuid")
                         .HasColumnName("IdPerfil");
 
-                    b.Property<DateTime>("LastLogin")
+                    b.Property<DateTime?>("LastLogin")
                         .HasColumnType("date")
                         .HasColumnName("LastLogin");
 
-                    b.Property<DateTime>("Modified")
+                    b.Property<DateTime?>("Modified")
                         .HasColumnType("date")
                         .HasColumnName("Modified");
 
@@ -144,7 +191,10 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnName("Senha");
 
                     b.Property<string>("Sobrenome")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("character varying(150)")
+                        .HasColumnName("Sobrenome");
 
                     b.HasKey("IdUsuario");
 
@@ -156,27 +206,11 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
 
                     b.HasIndex("IdContato");
 
+                    b.HasIndex("IdEndereco");
+
                     b.HasIndex("IdPerfil");
 
                     b.ToTable("usuario");
-                });
-
-            modelBuilder.Entity("SUC.Domain.Entities.Perfil", b =>
-                {
-                    b.HasOne("SUC.Domain.Entities.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioIdUsuario");
-
-                    b.Navigation("Usuario");
-                });
-
-            modelBuilder.Entity("SUC.Domain.Entities.Telefone.Contato", b =>
-                {
-                    b.HasOne("SUC.Domain.Entities.Usuario", "Usuario")
-                        .WithMany()
-                        .HasForeignKey("UsuarioIdUsuario");
-
-                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("SUC.Domain.Entities.Usuario", b =>
@@ -184,8 +218,12 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.HasOne("SUC.Domain.Entities.Telefone.Contato", "Contato")
                         .WithMany()
                         .HasForeignKey("IdContato")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
+
+                    b.HasOne("SUC.Domain.Entities.EntityEndereco.Endereco", "Endereco")
+                        .WithMany()
+                        .HasForeignKey("IdEndereco")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("SUC.Domain.Entities.Perfil", "Perfil")
                         .WithMany()
@@ -194,6 +232,8 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .IsRequired();
 
                     b.Navigation("Contato");
+
+                    b.Navigation("Endereco");
 
                     b.Navigation("Perfil");
                 });

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SUC.Infra.Data.PostgresSQL.Contexts;
@@ -9,9 +10,10 @@ using SUC.Infra.Data.PostgresSQL.Contexts;
 namespace SUC.Infra.Data.PostgresSQL.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    partial class SqlContextModelSnapshot : ModelSnapshot
+    [Migration("20220614231910_Add-Lastname-Usuario")]
+    partial class AddLastnameUsuario
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -146,7 +148,7 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.Property<string>("Cpf")
                         .HasColumnType("text");
 
-                    b.Property<DateTime?>("Created")
+                    b.Property<DateTime>("Created")
                         .HasColumnType("date")
                         .HasColumnName("Created");
 
@@ -156,11 +158,11 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("character varying(100)")
                         .HasColumnName("Email");
 
-                    b.Property<Guid?>("IdContato")
+                    b.Property<Guid>("IdContato")
                         .HasColumnType("uuid")
                         .HasColumnName("IdContato");
 
-                    b.Property<Guid?>("IdEndereco")
+                    b.Property<Guid>("IdEndereco")
                         .HasColumnType("uuid")
                         .HasColumnName("IdEndereco");
 
@@ -168,11 +170,11 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                         .HasColumnType("uuid")
                         .HasColumnName("IdPerfil");
 
-                    b.Property<DateTime?>("LastLogin")
+                    b.Property<DateTime>("LastLogin")
                         .HasColumnType("date")
                         .HasColumnName("LastLogin");
 
-                    b.Property<DateTime?>("Modified")
+                    b.Property<DateTime>("Modified")
                         .HasColumnType("date")
                         .HasColumnName("Modified");
 
@@ -216,12 +218,14 @@ namespace SUC.Infra.Data.PostgresSQL.Migrations
                     b.HasOne("SUC.Domain.Entities.Telefone.Contato", "Contato")
                         .WithMany()
                         .HasForeignKey("IdContato")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("SUC.Domain.Entities.EntityEndereco.Endereco", "Endereco")
                         .WithMany()
                         .HasForeignKey("IdEndereco")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("SUC.Domain.Entities.Perfil", "Perfil")
                         .WithMany()

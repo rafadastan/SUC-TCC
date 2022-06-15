@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Contracts.Infra.ReadRepository
 {
-    public interface IUsuarioReadRepository
+    public interface IUsuarioReadRepository : IBaseReadRepository<UsuarioModel, Guid>
     {
         Task<UsuarioModel> Get(string cpf, string senha);
     }

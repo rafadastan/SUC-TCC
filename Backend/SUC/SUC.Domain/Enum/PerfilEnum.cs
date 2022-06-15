@@ -10,7 +10,7 @@ namespace SUC.Domain.Enum
     {
         Administrador = 1,
         Operador = 2,
-        Cidadao = 3,
+        Municipe = 3,
         OperadorCampo = 4
     }
 }

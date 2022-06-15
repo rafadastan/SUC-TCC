@@ -8,8 +8,10 @@ namespace SUC.Domain.Models.Usuario
 {
     public class UsuarioModel
     {
-        public Guid Id { get; set; }
+        public Guid IdUsuario { get; set; }
+        public Guid IdPerfil { get; set; }
         public string Nome { get; set; }
+        public string SobreNome { get; set; }
         public string Cpf { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }

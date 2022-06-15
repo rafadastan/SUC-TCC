@@ -18,6 +18,7 @@ using SUC.Domain.Contracts.Usuarios;
 using SUC.Domain.Services;
 using SUC.Domain.Services.Auth;
 using SUC.Infra.Data.MongoDB.Caching;
+using SUC.Infra.Data.PostgresSQL._2._ReadRepository;
 using SUC.Infra.Data.PostgresSQL._3._Repository;
 using SUC.Infra.Data.PostgresSQL.Contexts;
 using SUC.Infra.Data.PostgresSQL_ReadRepository;
@@ -56,6 +57,7 @@ namespace SUC.CrossCutting.IOC
             services.AddTransient<IPerfilRepository, PerfilRepository>();
 
             services.AddTransient<IUsuarioReadRepository, UsuarioReadRepository>();
+            services.AddTransient<IPerfilReadRepository, PerfilReadRepository>();
 
             services.AddScoped<DbSession>();
             #endregion

@@ -17,7 +17,9 @@ namespace SUC.Application.Profiles
             CreateMap<PerfilCreateCommand, Perfil>();
             CreateMap<PerfilUpdateCommand, Perfil>();
             CreateMap<PerfilDeleteCommand, Perfil>();
-            CreateMap<PerfilModel, Perfil>();
+            CreateMap<PerfilModel, Perfil>()
+                .ForMember(dest => dest.IdPerfil, opts => opts.MapFrom(src => src.IdPerfil))
+                .ReverseMap();
         }
     }
 }

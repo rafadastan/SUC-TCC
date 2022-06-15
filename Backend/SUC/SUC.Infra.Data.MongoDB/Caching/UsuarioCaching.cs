@@ -26,13 +26,13 @@ namespace SUC.Infra.Data.MongoDB.Caching
 
         public async Task Update(UsuarioModel entity)
         {
-            var filter = Builders<UsuarioModel>.Filter.Eq(u => u.Id, entity.Id);
+            var filter = Builders<UsuarioModel>.Filter.Eq(u => u.IdUsuario, entity.IdUsuario);
             await _context.Usuario.ReplaceOneAsync(filter, entity);
         }
 
         public async Task Delete(UsuarioModel entity)
         {
-            var filter = Builders<UsuarioModel>.Filter.Eq(u => u.Id, entity.Id);
+            var filter = Builders<UsuarioModel>.Filter.Eq(u => u.IdUsuario, entity.IdUsuario);
             await _context.Usuario.DeleteOneAsync(filter);
         }
 
@@ -47,7 +47,7 @@ namespace SUC.Infra.Data.MongoDB.Caching
 
         public async Task<UsuarioModel> GetById(Guid id)
         {
-            var filter = Builders<UsuarioModel>.Filter.Eq(u => u.Id, id);
+            var filter = Builders<UsuarioModel>.Filter.Eq(u => u.IdUsuario, id);
 
             return await _context.Usuario.FindAsync(filter)
                 .Result

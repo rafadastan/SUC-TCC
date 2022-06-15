@@ -14,17 +14,21 @@ namespace SUC.Domain.Entities
     {
         public Guid IdUsuario { get; set; }
         public Guid IdPerfil { get; set; }
+        public Guid? IdEndereco { get; set; }
+        public Guid? IdContato { get; set; }
         public string Nome { get; set; }
         public string Sobrenome { get; set; }
         public string Cpf { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public DateTime Created { get; set; }
-        public DateTime Modified { get; set; }
-        public DateTime LastLogin { get; set; }
+        public DateTime? Created { get; set; }
+        public DateTime? Modified { get; set; }
+        public DateTime? LastLogin { get; set; }
+
         public Contato Contato { get; set; }
         public Perfil Perfil { get; set; }
         public Endereco Endereco { get; set; }
+
         public ValidationResult Validate 
             => new UsuarioValidation().Validate(this);
     }

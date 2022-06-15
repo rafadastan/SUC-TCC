@@ -9,7 +9,6 @@ namespace SUC.Domain.Entities.EntityEndereco
     public class Endereco
     {
         public Guid IdEndereco { get; set; }
-        public Guid? IdUsuario { get; set; }
         public string EnderecoNome { get; set; }
         public string Cidade { get; set; }
         public string Estado { get; set; }
@@ -20,6 +19,6 @@ namespace SUC.Domain.Entities.EntityEndereco
         public DateTime? LastModificationDate { get; set; }
         public Guid? LastModifierUserId { get; set; }
 
-        public Usuario Usuario { get; set; }
+        //public Usuario Usuario { get; set; }
     }
 }

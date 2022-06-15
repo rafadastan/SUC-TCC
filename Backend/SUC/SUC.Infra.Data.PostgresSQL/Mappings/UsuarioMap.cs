@@ -29,8 +29,19 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
                 .HasColumnName("IdPerfil")
                 .IsRequired();
 
+            builder.Property(u => u.IdContato)
+                .HasColumnName("IdContato");
+
+            builder.Property(u => u.IdEndereco)
+                .HasColumnName("IdEndereco");
+
             builder.Property(u => u.Nome)
                 .HasColumnName("Nome")
+                .HasMaxLength(150)
+                .IsRequired();
+
+            builder.Property(u => u.Sobrenome)
+                .HasColumnName("Sobrenome")
                 .HasMaxLength(150)
                 .IsRequired();
 
@@ -46,22 +57,29 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
 
             builder.Property(u => u.Created)
                 .HasColumnName("Created")
-                .HasColumnType("date")
-                .IsRequired();
+                .HasColumnType("date");
 
             builder.Property(u => u.Modified)
                 .HasColumnName("Modified")
-                .HasColumnType("date")
-                .IsRequired();
+                .HasColumnType("date");
 
             builder.Property(u => u.LastLogin)
                 .HasColumnName("LastLogin")
-                .HasColumnType("date")
-                .IsRequired();
+                .HasColumnType("date");
+
+            builder.HasOne(c => c.Contato)
+                .WithMany()
+                .HasForeignKey(x => x.IdContato)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.HasOne(c => c.Endereco)
+                .WithMany()
+                .HasForeignKey(x => x.IdEndereco)
+                .OnDelete(DeleteBehavior.Restrict);
 
             builder.HasOne(c => c.Perfil)
                 .WithMany()
-                .HasForeignKey(x=>x.IdPerfil)
+                .HasForeignKey(x => x.IdPerfil)
                 .OnDelete(DeleteBehavior.Restrict);
         }
     }

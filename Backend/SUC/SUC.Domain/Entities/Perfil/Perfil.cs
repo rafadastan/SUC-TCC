@@ -16,7 +16,7 @@ namespace SUC.Domain.Entities
         public string Description { get; set; }
         public bool Active { get; set; }
 
-        public Usuario Usuario { get; set; }
+        //public List<Usuario> ListaUsuario { get; set; }
 
         public ValidationResult Validate
             => new PerfilValidation()

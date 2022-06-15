@@ -22,8 +22,17 @@ namespace SUC.Infra.Data.PostgresSQL_BaseRepository
 
         public virtual async Task Create(TEntity entity)
         {
-            _sqlContext.Entry(entity).State = EntityState.Added;
-            await _sqlContext.SaveChangesAsync();
+            try
+            {
+                _sqlContext.Entry(entity).State = EntityState.Added;
+                await _sqlContext.SaveChangesAsync();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                Console.WriteLine(e.StackTrace);
+            }
+           
         }
 
         public virtual async Task Update(TEntity entity)

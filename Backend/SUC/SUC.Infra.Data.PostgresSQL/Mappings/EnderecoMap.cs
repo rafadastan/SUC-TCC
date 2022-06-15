@@ -24,9 +24,6 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
                 .HasColumnName("IdEndereco")
                 .IsRequired();
 
-            builder.Property(u => u.IdUsuario)
-                .HasColumnName("IdUsuario");
-
             builder.Property(u => u.Cidade)
                 .HasColumnName("Cidade")
                 .IsRequired();
@@ -58,11 +55,6 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
 
             builder.Property(u => u.LastModifierUserId)
                 .HasColumnName("LastModifierUserId");
-
-            builder.HasOne(e => e.Usuario)
-                .WithMany()
-                .HasForeignKey(e => e.IdUsuario)
-                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

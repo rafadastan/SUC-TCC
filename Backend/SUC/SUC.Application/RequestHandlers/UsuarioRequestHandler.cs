@@ -3,6 +3,7 @@ using FluentValidation;
 using MediatR;
 using SUC.Application.Commands.Usuario;
 using SUC.Application.Notifications;
+using SUC.Domain.Contracts.Infra.ReadRepository;
 using SUC.Domain.Contracts.Usuarios;
 using SUC.Domain.Entities;
 using System;
@@ -22,22 +23,25 @@ namespace SUC.Application.RequestHandlers
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
         private readonly IUsuarioDomainService _usuarioDomainService;
-
-        public UsuarioRequestHandler(IMediator mediator, 
-            IMapper mapper, 
-            IUsuarioDomainService usuarioDomainService)
+        private readonly IPerfilReadRepository _perfilReadRepository;
+        public UsuarioRequestHandler(IMediator mediator,
+            IMapper mapper,
+            IUsuarioDomainService usuarioDomainService, 
+            IPerfilReadRepository perfilReadRepository)
         {
             _mediator = mediator;
             _mapper = mapper;
             _usuarioDomainService = usuarioDomainService;
+            _perfilReadRepository = perfilReadRepository;
         }
 
         public async Task<Unit> Handle(UsuarioCreateCommand request, CancellationToken cancellationToken)
         {
             var usuario = _mapper.Map<Usuario>(request);
+            var perfilMunicipe = await _perfilReadRepository.GetByProfile(Domain.Enum.DomainEnum.PerfilEnum.Municipe);
 
             usuario.IdUsuario = Guid.NewGuid();
-            usuario.IdPerfil = Guid.NewGuid();
+            usuario.IdPerfil = perfilMunicipe.IdPerfil;
 
             var result = usuario.Validate;
             if (!result.IsValid)
