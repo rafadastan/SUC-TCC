@@ -1,0 +1,42 @@
+﻿using AutoMapper;
+using MediatR;
+using SUC.Application.Commands.Agenda;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace SUC.Application.RequestHandlers
+{
+    public class AgendaRequestHandler :
+        IRequestHandler<AgendaCreateCommand>,
+        IRequestHandler<AgendaUpdateCommand>,
+        IRequestHandler<AgendaDeleteCommand>
+    {
+        private readonly IMediator _mediator;
+        private readonly IMapper _mapper;
+
+        public AgendaRequestHandler(IMediator mediator, IMapper mapper)
+        {
+            _mediator = mediator;
+            _mapper = mapper;
+        }
+
+        public Task<Unit> Handle(AgendaDeleteCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Unit> Handle(AgendaUpdateCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<Unit> Handle(AgendaCreateCommand request, CancellationToken cancellationToken)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

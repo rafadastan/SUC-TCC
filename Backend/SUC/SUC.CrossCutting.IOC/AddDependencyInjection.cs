@@ -44,7 +44,7 @@ namespace SUC.CrossCutting.IOC
         public static void AddDependencyInjections(IServiceCollection services)
         {
             #region Application
-            services.AddTransient<IAuthApplicationService, AuthApplicationService>();
+            services.AddTransient<IAgendaApplicationService, AuthApplicationService>();
             services.AddTransient<IPerfilApplicationService, PerfilApplicationService>();
             services.AddTransient<IUsuarioApplicationService, UsuarioApplicationService>();
             services.AddTransient<IUsuarioApplicationService, UsuarioApplicationService>();

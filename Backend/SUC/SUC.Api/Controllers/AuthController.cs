@@ -15,10 +15,10 @@ namespace SUC.Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAuthApplicationService _authApplicationService;
+        private readonly IAgendaApplicationService _authApplicationService;
         private readonly AccessTokenService _jwtToken;
 
-        public AuthController(IAuthApplicationService authApplicationService,
+        public AuthController(IAgendaApplicationService authApplicationService,
             AccessTokenService jwtToken)
         {
             this._authApplicationService = authApplicationService;

@@ -44,7 +44,8 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
 
         public IUsuarioRepository UsuarioRepository => new UsuarioRepository(_sqlContext);
         public IPerfilRepository PerfilRepository => new PerfilRepository(_sqlContext);
-
+        public IContatoRepository ContatoRepository => new ContatoRepository(_sqlContext);
+        public IEnderecoRepository EnderecoRepository => new EnderecoRepository(_sqlContext); 
         public void Dispose()
         {
             _transaction.Dispose();
