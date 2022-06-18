@@ -8,4 +8,18 @@
     <PackageReference Include="FluentValidation" Version="10.3.6" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Solicitacao\" />
+    <Folder Include="Models\Avaliacao\" />
+    <Folder Include="Models\Catalago\" />
+    <Folder Include="Models\Chamado\" />
+    <Folder Include="Models\Demanda\" />
+    <Folder Include="Models\Departamento\" />
+    <Folder Include="Models\Indice\" />
+    <Folder Include="Models\Informacao\" />
+    <Folder Include="Models\Orgao\" />
+    <Folder Include="Models\Servico\" />
+    <Folder Include="Models\Atendimento\" />
+  </ItemGroup>
+
 </Project>
