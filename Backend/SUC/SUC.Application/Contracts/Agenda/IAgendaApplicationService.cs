@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Agenda
 {
-    interface IAgendaApplicationService
+    public interface IAgendaApplicationService
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Chamado
 {
-    interface IChamadoApplicationService
+    public interface IChamadoApplicationService
     {
     }
 }

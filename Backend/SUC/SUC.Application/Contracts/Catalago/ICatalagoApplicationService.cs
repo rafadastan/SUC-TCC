@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Catalago
 {
-    interface ICatalagoApplicationService
+    public interface ICatalagoApplicationService
     {
     }
 }

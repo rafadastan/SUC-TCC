@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Orgao
 {
-    interface IOrgaoApplicationService
+    public interface IOrgaoApplicationService
     {
     }
 }

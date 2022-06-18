@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Services
 {
-    public class ServicoDomainService : BaseDomainService<Servico, Guid>, IServiceDomainService
+    public class ServicoDomainService : BaseDomainService<Servico, Guid>, IServicoDomainService
     {
         private readonly IUnitOfWork _unitOfWork;
 

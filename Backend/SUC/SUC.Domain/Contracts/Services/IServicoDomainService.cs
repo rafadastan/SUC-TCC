@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Contracts.Services
 {
-    public interface IServiceDomainService : IBaseDomainService<Servico, Guid>
+    public interface IServicoDomainService : IBaseDomainService<Servico, Guid>
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Servico
 {
-    interface IServiceApplicationService
+    public interface IServicoApplicationService
     {
     }
 }

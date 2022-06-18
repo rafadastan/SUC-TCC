@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Demanda
 {
-    interface IDemandaApplicationService
+    public interface IDemandaApplicationService
     {
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Avaliacao
 {
-    interface IAvaliacaoApplicationService
+    public interface IAvaliacaoApplicationService
     {
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Services.Servico
 {
-    public class ServicoApplicationService : IServiceApplicationService
+    public class ServicoApplicationService : IServicoApplicationService
     {
     }
 }
