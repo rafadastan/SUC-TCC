@@ -28,6 +28,7 @@ using SUC.Infra.Data.PostgresSQL._2._ReadRepository;
 using SUC.Infra.Data.PostgresSQL._3._Repository;
 using SUC.Infra.Data.PostgresSQL.Contexts;
 using SUC.Infra.Data.PostgresSQL.ReadRepositoryEndereco;
+using SUC.Infra.Data.PostgresSQL.Repository;
 using SUC.Infra.Data.PostgresSQL_ReadRepository;
 using SUC.Infra.Data.PostgresSQL_Repository;
 using SUC.Security.UserContext;

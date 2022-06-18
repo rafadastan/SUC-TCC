@@ -23,7 +23,18 @@ namespace SUC.Domain.Contracts.Infra.Repository
         IPerfilRepository PerfilRepository { get; }
         IContatoRepository ContatoRepository { get; }
         IEnderecoRepository EnderecoRepository { get; }
-
+        IAgenciaRepository AgenciaRepository { get; }
+        IAtendimentoRepository AtendimentoRepository { get; }
+        IAvaliacaoRepository AvaliacaoRepository { get; }
+        ICatalagoRepository CatalagoRepository { get; }
+        IChamadoRepository ChamadoRepository { get; }
+        IDemandaRepository DemandaRepository { get; }
+        IDepartamentoRepository DepartamentoRepository { get; }
+        IIndiceRepository IndiceRepository { get; }
+        IInformacaoRepository InformacaoRepository { get; }
+        IOrgaoRepository OrgaoRepository { get; }
+        IServicoRepository ServicoRepository { get; }
+        ISolicitacaoRepository SolicitacaoRepository { get; }
         #endregion
     }
 }

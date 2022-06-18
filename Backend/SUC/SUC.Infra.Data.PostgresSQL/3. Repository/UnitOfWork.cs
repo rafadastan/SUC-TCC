@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using SUC.Domain.Contracts.Infra.Repository;
 using SUC.Infra.Data.PostgresSQL.Contexts;
+using SUC.Infra.Data.PostgresSQL.Repository;
 using SUC.Infra.Data.PostgresSQL_Repository;
 using System;
 using System.Collections.Generic;
@@ -45,7 +46,32 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
         public IUsuarioRepository UsuarioRepository => new UsuarioRepository(_sqlContext);
         public IPerfilRepository PerfilRepository => new PerfilRepository(_sqlContext);
         public IContatoRepository ContatoRepository => new ContatoRepository(_sqlContext);
-        public IEnderecoRepository EnderecoRepository => new EnderecoRepository(_sqlContext); 
+        public IEnderecoRepository EnderecoRepository => new EnderecoRepository(_sqlContext);
+
+        public IAgenciaRepository AgenciaRepository => throw new NotImplementedException();
+
+        public IAtendimentoRepository AtendimentoRepository => throw new NotImplementedException();
+
+        public IAvaliacaoRepository AvaliacaoRepository => throw new NotImplementedException();
+
+        public ICatalagoRepository CatalagoRepository => throw new NotImplementedException();
+
+        public IChamadoRepository ChamadoRepository => throw new NotImplementedException();
+
+        public IDemandaRepository DemandaRepository => throw new NotImplementedException();
+
+        public IDepartamentoRepository DepartamentoRepository => throw new NotImplementedException();
+
+        public IIndiceRepository IndiceRepository => throw new NotImplementedException();
+
+        public IInformacaoRepository InformacaoRepository => throw new NotImplementedException();
+
+        public IOrgaoRepository OrgaoRepository => throw new NotImplementedException();
+
+        public IServicoRepository ServicoRepository => throw new NotImplementedException();
+
+        public ISolicitacaoRepository SolicitacaoRepository => throw new NotImplementedException();
+
         public void Dispose()
         {
             _transaction.Dispose();

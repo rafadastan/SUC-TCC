@@ -1,5 +1,6 @@
 ﻿using SUC.Domain.Contracts.Infra.Caching;
 using SUC.Domain.Models.Contato;
+using SUC.Infra.Data.MongoDB.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,13 @@ namespace SUC.Infra.Data.MongoDB.Caching
 {
     public class ContatoCaching : IContatoCaching
     {
+        private readonly MongoDBContext _context;
+
+        public ContatoCaching(MongoDBContext context)
+        {
+            _context = context;
+        }
+
         public Task Create(ContatoModel entity)
         {
             throw new NotImplementedException();

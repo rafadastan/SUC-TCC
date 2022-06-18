@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SUC.Infra.Data.PostgresSQL._3._Repository
+namespace SUC.Infra.Data.PostgresSQL.Repository
 {
     public class ContatoRepository : BaseRepository<Contato, Guid>, IContatoRepository
     {
