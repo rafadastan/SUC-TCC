@@ -45,5 +45,24 @@ namespace SUC.Domain.Services
 
             _unitOfWork.Save();
         }
+        public override Task Update(Usuario entity)
+        {
+            return base.Update(entity);
+        }
+
+        public override Task Delete(Usuario entity)
+        {
+            return base.Delete(entity);
+        }
+
+        public override Task<Usuario> GetById(Guid id)
+        {
+            return base.GetById(id);
+        }
+
+        public override Task<List<Usuario>> GetAll()
+        {
+            return base.GetAll();
+        }        
     }
 }

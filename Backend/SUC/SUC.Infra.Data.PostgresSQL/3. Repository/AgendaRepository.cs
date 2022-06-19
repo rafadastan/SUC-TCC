@@ -1,4 +1,5 @@
 ﻿using SUC.Domain.Contracts.Infra.Repository;
+using SUC.Domain.Contracts.Infra.RepositoryAgenda;
 using SUC.Domain.Entities.Agenda;
 using SUC.Infra.Data.PostgresSQL.Contexts;
 using SUC.Infra.Data.PostgresSQL_BaseRepository;
@@ -10,11 +11,12 @@ using System.Threading.Tasks;
 
 namespace SUC.Infra.Data.PostgresSQL._3._Repository
 {
-    public class AgendaRepository : BaseRepository<Agenda, Guid>, IAgenciaRepository
+    public class AgendaRepository : BaseRepository<Agenda, Guid>, IAgendaRepository
     {
         private readonly SqlContext _sqlContext;
 
-        public AgendaRepository(SqlContext sqlContext) : base(sqlContext)
+        public AgendaRepository(SqlContext sqlContext) 
+            : base(sqlContext)
         {
             _sqlContext = sqlContext;
         }

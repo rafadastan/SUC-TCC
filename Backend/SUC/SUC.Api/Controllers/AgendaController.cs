@@ -11,5 +11,6 @@ namespace SUC.Api.Controllers
     [ApiController]
     public class AgendaController : ControllerBase
     {
+
     }
 }

@@ -1,4 +1,7 @@
 ﻿using MongoDB.Driver;
+using SUC.Domain.Models.Agenda;
+using SUC.Domain.Models.Contato;
+using SUC.Domain.Models.Endereco;
 using SUC.Domain.Models.Perfil;
 using SUC.Domain.Models.Usuario;
 using SUC.Infra.Data.MongoDB.Settings;
@@ -43,5 +46,12 @@ namespace SUC.Infra.Data.MongoDB.Contexts
 
         public IMongoCollection<PerfilModel> Perfil
             => _mongoDatabase.GetCollection<PerfilModel>("Perfil");
+        public IMongoCollection<ContatoModel> Contato
+            => _mongoDatabase.GetCollection<ContatoModel>("Contato");
+        public IMongoCollection<EnderecoModel> Endereco
+            => _mongoDatabase.GetCollection<EnderecoModel>("Endereco");
+
+        public IMongoCollection<AgendaModel> Agenda
+            => _mongoDatabase.GetCollection<AgendaModel>("Agenda");
     }
 }

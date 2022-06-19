@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Infra.Data.PostgresSQL.ReadRepository
 {
-    public class AgenciaReadRepository : BaseReadRepository<AgendaModel, Guid>, IAgenciaReadRepository
+    public class AgendaReadRepository : BaseReadRepository<AgendaModel, Guid>, IAgendaReadRepository
     {
     }
 }

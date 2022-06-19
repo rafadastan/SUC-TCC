@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Contracts.Infra.ReadRepository
 {
-    public interface IAgenciaReadRepository : IBaseReadRepository<AgendaModel, Guid>
+    public interface IAgendaReadRepository : IBaseReadRepository<AgendaModel, Guid>
     {
     }
 }

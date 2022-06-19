@@ -9,5 +9,6 @@ namespace SUC.Application.Commands.Agenda
 {
     public class AgendaDeleteCommand : IRequest
     {
+        public Guid IdAgenda { get; set; }
     }
 }

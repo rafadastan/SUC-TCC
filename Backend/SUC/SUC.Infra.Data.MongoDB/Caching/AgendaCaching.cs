@@ -1,5 +1,7 @@
-﻿using SUC.Domain.Contracts.Infra.Caching;
+﻿using MongoDB.Driver;
+using SUC.Domain.Contracts.Infra.Caching;
 using SUC.Domain.Models.Agenda;
+using SUC.Infra.Data.MongoDB.Contexts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,29 +12,45 @@ namespace SUC.Infra.Data.MongoDB.Caching
 {
     public class AgendaCaching : IAgendaCaching
     {
-        public Task Create(AgendaModel entity)
+        private readonly MongoDBContext _context;
+
+        public AgendaCaching(MongoDBContext context)
         {
-            throw new NotImplementedException();
+            _context = context;
         }
 
-        public Task Delete(AgendaModel entity)
+        public async Task Create(AgendaModel entity)
         {
-            throw new NotImplementedException();
+            await _context.Agenda.InsertOneAsync(entity);
+        }
+        public async Task Update(AgendaModel entity)
+        {
+            var filter = Builders<AgendaModel>.Filter.Eq(u => u.IdAgenda, entity.IdAgenda);
+            await _context.Agenda.ReplaceOneAsync(filter, entity);
         }
 
-        public Task<List<AgendaModel>> GetAll()
+        public async Task Delete(AgendaModel entity)
         {
-            throw new NotImplementedException();
+            var filter = Builders<AgendaModel>.Filter.Eq(u => u.IdAgenda, entity.IdAgenda);
+            await _context.Agenda.DeleteOneAsync(filter);
         }
 
-        public Task<AgendaModel> GetById(Guid id)
+        public async Task<List<AgendaModel>> GetAll()
         {
-            throw new NotImplementedException();
+            var filter = Builders<AgendaModel>.Filter.Where(u => true);
+
+            return await _context.Agenda.FindAsync(filter)
+                .Result
+                .ToListAsync();
         }
 
-        public Task Update(AgendaModel entity)
+        public async Task<AgendaModel> GetById(Guid id)
         {
-            throw new NotImplementedException();
+            var filter = Builders<AgendaModel>.Filter.Eq(u => u.IdAgenda, id);
+
+            return await _context.Agenda.FindAsync(filter)
+                .Result
+                .FirstOrDefaultAsync();
         }
     }
 }

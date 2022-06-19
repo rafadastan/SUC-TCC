@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using SUC.Domain.Validations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,5 +15,8 @@ namespace SUC.Domain.Entities.Agenda
         public string Descricao { get; set; }
         public string Local { get; set; }
         public DateTime DataAgenda { get; set; }
+
+        public ValidationResult Validate
+            => new AgendaValidation().Validate(this);
     }
 }

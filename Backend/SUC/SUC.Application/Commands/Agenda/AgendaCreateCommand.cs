@@ -9,5 +9,9 @@ namespace SUC.Application.Commands.Agenda
 {
     public class AgendaCreateCommand : IRequest
     {
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
+        public string Local { get; set; }
+        public DateTime DataAgenda { get; set; }
     }
 }
