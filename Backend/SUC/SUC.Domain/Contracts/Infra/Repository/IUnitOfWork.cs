@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SUC.Domain.Contracts.Infra.RepositoryAgenda;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,7 @@ namespace SUC.Domain.Contracts.Infra.Repository
         IPerfilRepository PerfilRepository { get; }
         IContatoRepository ContatoRepository { get; }
         IEnderecoRepository EnderecoRepository { get; }
-        IAgenciaRepository AgenciaRepository { get; }
+        IAgendaRepository AgenciaRepository { get; }
         IAtendimentoRepository AtendimentoRepository { get; }
         IAvaliacaoRepository AvaliacaoRepository { get; }
         ICatalagoRepository CatalagoRepository { get; }

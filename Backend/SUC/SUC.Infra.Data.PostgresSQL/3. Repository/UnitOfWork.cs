@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 using SUC.Domain.Contracts.Infra.Repository;
+using SUC.Domain.Contracts.Infra.RepositoryAgenda;
 using SUC.Infra.Data.PostgresSQL.Contexts;
 using SUC.Infra.Data.PostgresSQL.Repository;
 using SUC.Infra.Data.PostgresSQL_Repository;
@@ -48,7 +49,7 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
         public IContatoRepository ContatoRepository => new ContatoRepository(_sqlContext);
         public IEnderecoRepository EnderecoRepository => new EnderecoRepository(_sqlContext);
 
-        public IAgenciaRepository AgenciaRepository => throw new NotImplementedException();
+        public IAgendaRepository AgenciaRepository => throw new NotImplementedException();
 
         public IAtendimentoRepository AtendimentoRepository => throw new NotImplementedException();
 
