@@ -31,28 +31,35 @@ namespace SUC.Api.Controllers
         [ProducesResponseType(500)]
         public async Task<IActionResult> PostAsync(AuthenticationCommand model)
         {
-            var athentication = await _authApplicationService.Authentication(model);
-
-            if (athentication != null)
+            try
             {
-                return StatusCode(200, new
+                var athentication = await _authApplicationService.Authentication(model);
+
+                if (athentication != null)
                 {
-                    Message = "Usuário autenticado com sucesso.",
-                    Usuario = athentication,
-                    AccessToken = new
+                    return StatusCode(200, new
                     {
-                        BearerToken = _jwtToken.GenerateToken(athentication.Email),
-                        Expiration = DateTime.Now.AddDays(1)
-                    }
+                        Message = "Autenticado com sucesso.",
+                        Usuario = athentication,
+                        AccessToken = new
+                        {
+                            BearerToken = _jwtToken.GenerateToken(athentication.Email),
+                            Expiration = DateTime.Now.AddDays(1)
+                        }
+                    });
+                }
+
+                return Unauthorized();
+            }
+            catch (Exception e)
+            {
+                return StatusCode(404, new
+                {
+                    Message = "Acesso Negado. Usuário não encontrado.",
+                    StackTraces = e.StackTrace,
+                    MessageError = e.Message
                 });
             }
-
-            //throw new Exception("Acesso Negado. Usuário não encontrado.");
-
-            return StatusCode(404, new
-            {
-                Message = "Acesso Negado. Usuário não encontrado."
-            });
         }
     }
 }

@@ -30,7 +30,7 @@ namespace SUC.Tests.API
             var request = RequestHelper.Create(command);
 
             //fazendo a requisição de autenticação 'POST'
-            var response = await client.PostAsync("api/auth", request);
+            var response = await client.PostAsync("api/Auth", request);
 
             //capturar o retorno obtido da API
             var result = JsonConvert.DeserializeObject<AuthenticationResult>
@@ -42,17 +42,45 @@ namespace SUC.Tests.API
                 .Be(HttpStatusCode.OK);
 
             //verificando a mensagem obtida
-            result.Mensagem
+            result.Message
                 .Should() //Fluent Assertions!
-                .Be("Autenticado com sucesso");
+                .Be("Autenticado com sucesso.");
 
             //verificando se o token foi obtido
             result.AccessToken
+                .BearerToken
                 .Should() //Fluent Assertions!
                 .NotBeNullOrEmpty();
 
             //retornando o TOKEN..
-            return result.AccessToken;
+            return result
+                .AccessToken
+                .BearerToken;
+        }
+
+        [Fact]
+        public async Task Authentication_Post_Returns_Unauthorized()
+        {
+            //conectar na API..
+            var client = HttpClientHelper.Create();
+
+            //criando o objeto da requisição
+            var command = new AuthenticationCommand
+            {
+                Cpf = "teste@gmail.com",
+                Senha = "teste123456"
+            };
+
+            //'empacotando' o objeto para JSON
+            var request = RequestHelper.Create(command);
+
+            //fazendo a requisição de autenticação 'POST'
+            var response = await client.PostAsync("api/auth", request);
+
+            //criando um criterio de teste (assert)
+            response.StatusCode
+                .Should() //Fluent Assertions!
+                .Be(HttpStatusCode.Unauthorized);
         }
     }
 }

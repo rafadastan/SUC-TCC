@@ -8,7 +8,12 @@ namespace SUC.Tests.API
 {
     public class AuthenticationResult
     {
-        public string Mensagem { get; set; }
-        public string AccessToken { get; set; }
+        public string Message { get; set; }
+        public AccessToken AccessToken { get; set; }
+    }
+    public class AccessToken
+    {
+        public string BearerToken { get; set; }
+        public DateTime Expiration { get; set; }
     }
 }
