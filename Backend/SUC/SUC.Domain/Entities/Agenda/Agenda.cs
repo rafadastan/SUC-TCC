@@ -1,4 +1,5 @@
 ﻿using FluentValidation.Results;
+using SUC.Domain.Contracts.Base;
 using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Entities.Agenda
 {
-    public class Agenda
+    public class Agenda : IBaseValidations
     {
         public Guid IdAgenda { get; set; }
         public string Titulo { get; set; }

@@ -19,6 +19,6 @@ namespace SUC.Domain.Entities.EntityEndereco
         public DateTime? LastModificationDate { get; set; }
         public Guid? LastModifierUserId { get; set; }
 
-        public Usuario Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

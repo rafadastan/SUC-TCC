@@ -1,16 +1,13 @@
 ﻿using FluentValidation.Results;
 using SUC.Domain.Validations;
 using System;
-using System.Collections.Generic;
 using SUC.Domain.Entities.Telefone;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SUC.Domain.Entities.EntityEndereco;
+using SUC.Domain.Contracts.Base;
 
 namespace SUC.Domain.Entities
 {
-    public class Usuario
+    public class Usuario : IBaseValidations
     {
         public Guid IdUsuario { get; set; }
         public Guid IdPerfil { get; set; }
@@ -25,9 +22,9 @@ namespace SUC.Domain.Entities
         public DateTime? Modified { get; set; }
         public DateTime? LastLogin { get; set; }
 
-        public Contato Contato { get; set; }
-        public Perfil Perfil { get; set; }
-        public Endereco Endereco { get; set; }
+        public virtual Contato Contato { get; set; }
+        public virtual Perfil Perfil { get; set; }
+        public virtual Endereco Endereco { get; set; }
 
         public ValidationResult Validate 
             => new UsuarioValidation().Validate(this);

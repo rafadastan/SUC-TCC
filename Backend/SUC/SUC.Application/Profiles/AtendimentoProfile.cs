@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using SUC.Application.Commands.Agenda;
+using SUC.Application.Commands.Atendimento;
 using SUC.Domain.Entities.Agenda;
+using SUC.Domain.Entities.Atendimento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,9 +15,9 @@ namespace SUC.Application.Profiles
     {
         public AtendimentoProfile()
         {
-            CreateMap<Agenda, AgendaCreateCommand>().ReverseMap();
-            CreateMap<Agenda, AgendaUpdateCommand>().ReverseMap();
-            CreateMap<Agenda, AgendaDeleteCommand>().ReverseMap();
+            CreateMap<Atendimento, AtendimentoCreateCommand>().ReverseMap();
+            CreateMap<Atendimento, AtendimentoUpdateCommand>().ReverseMap();
+            CreateMap<Atendimento, AtendimentoDeleteCommand>().ReverseMap();
         }
     }
 }

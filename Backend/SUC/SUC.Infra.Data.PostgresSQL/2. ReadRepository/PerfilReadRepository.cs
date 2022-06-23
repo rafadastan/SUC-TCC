@@ -26,7 +26,7 @@ namespace SUC.Infra.Data.PostgresSQL._2._ReadRepository
             var query = await _session
                 .Connection
                 .QueryAsync<PerfilModel>(@"
-                    SELECT p.""IdPerfil"" as Id, p.* 
+                    SELECT p.""IdPerfil"", p.""PerfilUsuario"" as perfis, p.""Descricao"" as Description, p.""Ativo"" as Active
                         FROM perfil p 
                     WHERE p.""PerfilUsuario"" = @PerfilUsuario",
                 new

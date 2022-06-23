@@ -42,7 +42,7 @@ namespace SUC.Application.RequestHandlers
 
             usuario.IdUsuario = Guid.NewGuid();
             usuario.IdPerfil = perfilMunicipe.IdPerfil;
-
+            
             var result = usuario.Validate;
             if (!result.IsValid)
                 throw new ValidationException(result.Errors);

@@ -16,6 +16,8 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
             //nome da tabela
             builder.ToTable("contato");
 
+            builder.Ignore(c => c.Usuario);
+
             //chave primária
             builder.HasKey(u => u.IdContato);
 

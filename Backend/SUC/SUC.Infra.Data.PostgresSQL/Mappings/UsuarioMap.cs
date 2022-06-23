@@ -70,17 +70,17 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
             builder.HasOne(c => c.Contato)
                 .WithMany()
                 .HasForeignKey(x => x.IdContato)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(c => c.Endereco)
                 .WithMany()
                 .HasForeignKey(x => x.IdEndereco)
-                .OnDelete(DeleteBehavior.Restrict);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(c => c.Perfil)
                 .WithMany()
-                .HasForeignKey(x => x.IdPerfil)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(x => x.IdPerfil).IsRequired()
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

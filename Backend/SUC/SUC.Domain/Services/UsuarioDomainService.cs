@@ -45,24 +45,25 @@ namespace SUC.Domain.Services
 
             _unitOfWork.Save();
         }
-        public override Task Update(Usuario entity)
+        public override async Task Update(Usuario entity)
         {
-            return base.Update(entity);
+            await base.Update(entity);
         }
 
-        public override Task Delete(Usuario entity)
+        public override async Task Delete(Usuario entity)
         {
-            return base.Delete(entity);
+            await _unitOfWork.UsuarioRepository.Delete(entity);
+            _unitOfWork.Save();
         }
 
-        public override Task<Usuario> GetById(Guid id)
+        public override async Task<Usuario> GetById(Guid id)
         {
-            return base.GetById(id);
+            return await base.GetById(id);
         }
 
-        public override Task<List<Usuario>> GetAll()
+        public override async Task<List<Usuario>> GetAll()
         {
-            return base.GetAll();
+            return await base.GetAll();
         }        
     }
 }

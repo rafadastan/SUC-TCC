@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using MongoDB.Bson;
+using SUC.Domain.Contracts.Base;
+using SUC.Domain.Contracts.BaseModelEntity;
+using SUC.Domain.ModelsBases;
 
 namespace SUC.Domain.Models.Usuario
 {
-    public class UsuarioModel
+    public class UsuarioModel : TenantModel
     {
         public Guid IdUsuario { get; set; }
         public Guid IdPerfil { get; set; }
@@ -18,5 +18,7 @@ namespace SUC.Domain.Models.Usuario
         public DateTime Created { get; set; }
         public DateTime Modified { get; set; }
         public DateTime LastLogin { get; set; }
+
+        protected override ObjectId _id => id;
     }
 }

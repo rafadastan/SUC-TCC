@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SUC.Tests.API
+namespace SUC.Domain.Contracts.Base
 {
-    public class UsuarioTests
+    public interface IEntity
     {
-
+        public Guid Id { get; set; }
     }
 }

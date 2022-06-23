@@ -16,7 +16,12 @@ namespace SUC.Application.Profiles
         {
             CreateMap<UsuarioCreateCommand, Usuario>().ReverseMap();
             CreateMap<UsuarioUpdateCommand, Usuario>().ReverseMap();
-            CreateMap<UsuarioDeleteCommand, Usuario>().ReverseMap();
+            CreateMap<UsuarioDeleteCommand, Usuario>()
+                .AfterMap((src, desc) => 
+                {
+                    desc.IdUsuario = src.Id;
+                })
+                .ReverseMap();
             CreateMap<UsuarioModel, Usuario>().ReverseMap();
         }
     }
