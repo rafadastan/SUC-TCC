@@ -47,7 +47,8 @@ namespace SUC.Domain.Services
         }
         public override async Task Update(Usuario entity)
         {
-            await base.Update(entity);
+            await _unitOfWork.UsuarioRepository.Update(entity);
+            _unitOfWork.Save();
         }
 
         public override async Task Delete(Usuario entity)

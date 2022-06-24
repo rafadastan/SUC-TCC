@@ -65,6 +65,7 @@ namespace SUC.Tests.API
             var command = new UsuarioUpdateCommand
             {
                 Id = usuario.IdUsuario,
+                IdPerfil = usuario.IdPerfil,
                 Nome = usuario.Nome,
                 SobreNome = _faker.Person.LastName,
                 Cpf = usuario.Cpf,

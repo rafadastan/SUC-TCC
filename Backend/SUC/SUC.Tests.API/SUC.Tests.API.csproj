@@ -28,6 +28,9 @@
 
   <ItemGroup>
     <Folder Include="Agenda\" />
+    <Folder Include="Contato\" />
+    <Folder Include="Endereco\" />
+    <Folder Include="Perfil\" />
   </ItemGroup>
 
 </Project>

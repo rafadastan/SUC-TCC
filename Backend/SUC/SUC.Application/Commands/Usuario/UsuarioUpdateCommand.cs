@@ -10,6 +10,7 @@ namespace SUC.Application.Commands.Usuario
     public class UsuarioUpdateCommand : IRequest
     {
         public Guid Id { get; set; }
+        public Guid IdPerfil { get; set; }
         public string Nome { get; set; }
         public string SobreNome { get; set; }
         public string Cpf { get; set; }

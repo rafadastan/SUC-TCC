@@ -115,7 +115,7 @@ namespace SUC.Api.Controllers
             }
         }
 
-        [HttpGet("id")]
+        [HttpGet("{id}")]
         [ProducesResponseType(200)]
         [ProducesResponseType(typeof(BadRequestResult), 400)]
         [ProducesResponseType(typeof(BadHttpRequestException), 500)]

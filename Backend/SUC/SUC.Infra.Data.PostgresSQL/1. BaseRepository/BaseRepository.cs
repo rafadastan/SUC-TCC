@@ -29,15 +29,9 @@ namespace SUC.Infra.Data.PostgresSQL_BaseRepository
 
         public virtual async Task Update(TEntity entity)
         {
-            _sqlContext.Entry(entity).State = EntityState.Modified;
-            await _sqlContext.SaveChangesAsync();
-        }
-
-        public virtual async Task Delete(TEntity entity)
-        {
             try
             {
-                _sqlContext.Entry(entity).State = EntityState.Deleted;
+                _sqlContext.Entry(entity).State = EntityState.Modified;
                 await _sqlContext.SaveChangesAsync();
             }
             catch (Exception e)
@@ -45,6 +39,13 @@ namespace SUC.Infra.Data.PostgresSQL_BaseRepository
                 Console.WriteLine(e.Message);
                 Console.WriteLine(e.StackTrace);
             }
+        }
+
+        public virtual async Task Delete(TEntity entity)
+        {
+            _sqlContext.Entry(entity).State = EntityState.Deleted;
+            await _sqlContext.SaveChangesAsync();
+
         }
 
         public virtual async Task<List<TEntity>> GetAll()

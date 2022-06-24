@@ -12,7 +12,7 @@ services:
       networks:
         - distributed-estore
       volumes: 
-        - rabbitmq:/var/lib/rabbitmq
+        - rabbitmq:/home/raphael/Desenvolvimento/Docker/Volume/rabbitmq
   mongo:
     image: mongo
     environment:
@@ -21,7 +21,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /home/raphael/Desenvolvimento/Docker/Volume/MongoDB:/data/db
+      - /home/raphael/Desenvolvimento/Docker/Volume/MongoDB/data/db
     networks:
       - mongo-compose-network
 
