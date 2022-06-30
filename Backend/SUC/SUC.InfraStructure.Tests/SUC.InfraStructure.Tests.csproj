@@ -22,7 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SUC.Domain\SUC.Domain.csproj" />
+    <ProjectReference Include="..\SUC.Infra.Data.MongoDB\SUC.Infra.Data.MongoDB.csproj" />
+    <ProjectReference Include="..\SUC.Infra.Data.PostgresSQL\SUC.Infra.Data.PostgresSQL.csproj" />
+    <ProjectReference Include="..\SUC.Validations\SUC.Validations.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\PostgreSQL\" />
   </ItemGroup>
 
 </Project>
