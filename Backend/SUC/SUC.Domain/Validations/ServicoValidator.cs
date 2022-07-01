@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using SUC.Domain.Entities.Servico;
+using SUC.Domain.Entities.Servicos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

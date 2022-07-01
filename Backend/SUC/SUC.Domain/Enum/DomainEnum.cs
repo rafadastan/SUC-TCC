@@ -16,12 +16,20 @@ namespace SUC.Domain.Enum
             OperadorCampo = 4
         }
 
-        public enum Solicitacao
+        public enum TipoSolicitacao
         {
-            Aberto,
+            Resolvido,
             Aguardando,
             Andamento,
+            Pendente,
             Finalizado
+        }
+
+        public enum TipoServico
+        {
+            Imposto,
+            AssistenteSocial,
+            SegurancaPublica
         }
 
         public enum Atendimento
@@ -32,6 +40,12 @@ namespace SUC.Domain.Enum
             Finalizado
         }
 
+        public enum TipoAtendimento
+        {
+            Imposto,
+            Interno,
+            Publico
+        }
         public enum Chamado
         {
             Aberto,

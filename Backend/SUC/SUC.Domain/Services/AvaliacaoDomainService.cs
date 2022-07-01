@@ -1,6 +1,6 @@
 ﻿using SUC.Domain.Contracts.Infra.Repository;
 using SUC.Domain.Contracts.Services;
-using SUC.Domain.Entities.Avaliacao;
+using SUC.Domain.Entities.Avaliacoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

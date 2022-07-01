@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SUC.Domain.Entities.Servico;
+using SUC.Domain.Entities.Servicos;
 using System;
 using System.Collections.Generic;
 using System.Linq;

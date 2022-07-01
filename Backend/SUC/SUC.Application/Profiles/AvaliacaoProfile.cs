@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using SUC.Application.Commands.Avaliacao;
-using SUC.Domain.Entities.Avaliacao;
+using SUC.Domain.Entities.Avaliacoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

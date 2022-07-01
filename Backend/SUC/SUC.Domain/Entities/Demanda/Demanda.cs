@@ -10,5 +10,7 @@ namespace SUC.Domain.Entities.Demanda
     {
         public Guid IdDemanda { get; set; }
         public string Descricao { get; set; }
+        public int Status { get; set; }
+        public string Protocolo { get; set; }
     }
 }

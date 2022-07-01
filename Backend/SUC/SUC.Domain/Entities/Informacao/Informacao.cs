@@ -9,5 +9,7 @@ namespace SUC.Domain.Entities.Informacoes
     public class Informacao
     {
         public Guid IdInformacao { get; set; }
+        public string NomeSolicitacaoInformacao { get; set; }
+        public string Descricao { get; set; }
     }
 }

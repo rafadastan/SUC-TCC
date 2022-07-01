@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SUC.Domain.Entities.Avaliacao;
+using SUC.Domain.Entities.Avaliacoes;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,5 +1,5 @@
 ﻿using SUC.Domain.Contracts.Infra.Repository;
-using SUC.Domain.Entities.Avaliacao;
+using SUC.Domain.Entities.Avaliacoes;
 using SUC.Infra.Data.PostgresSQL.Contexts;
 using SUC.Infra.Data.PostgresSQL_BaseRepository;
 using System;
