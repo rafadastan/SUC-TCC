@@ -4,10 +4,12 @@ using SUC.Domain.Entities.Servicos;
 using SUC.Domain.Entities.Telefone;
 using SUC.Domain.Entities.Avaliacoes;
 using static SUC.Domain.Enum.DomainEnum;
+using SUC.Domain.Contracts.Base;
+using FluentValidation.Results;
 
 namespace SUC.Domain.Entities.Solicitacao
 {
-    public class Solicitacao
+    public class Solicitacao : IBaseValidations
     {
         public Guid IdSolicitacao { get; set; }
         public string NomeSolicitacao { get; set; }
@@ -22,5 +24,7 @@ namespace SUC.Domain.Entities.Solicitacao
         public Contato Contato { get; set; }
         public Avaliacao Avaliacao { get; set; }
         public Usuario Usuario { get; set; }
+
+        public ValidationResult Validate => throw new NotImplementedException();
     }
 }

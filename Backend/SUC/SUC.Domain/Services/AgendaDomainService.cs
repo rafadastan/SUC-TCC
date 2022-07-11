@@ -26,6 +26,7 @@ namespace SUC.Domain.Services
         {
             return base.Create(entity);
         }
+
         public override Task Update(Agenda entity)
         {
             return base.Update(entity);

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using SUC.Domain.Contracts.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Entities.Telefone
 {
-    public class Contato
+    public class Contato : IBaseValidations
     {
         public Guid IdContato { get; set; }
         public Guid? LastModifierUserId { get; set; }
@@ -17,5 +19,7 @@ namespace SUC.Domain.Entities.Telefone
         public DateTime? LastModificationDate { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+
+        public ValidationResult Validate => throw new NotImplementedException();
     }
 }

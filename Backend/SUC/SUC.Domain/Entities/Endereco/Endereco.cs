@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using SUC.Domain.Contracts.Base;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Entities.EntityEndereco
 {
-    public class Endereco
+    public class Endereco : IBaseValidations
     {
         public Guid IdEndereco { get; set; }
         public string EnderecoNome { get; set; }
@@ -20,5 +22,7 @@ namespace SUC.Domain.Entities.EntityEndereco
         public Guid? LastModifierUserId { get; set; }
 
         public virtual Usuario Usuario { get; set; }
+
+        public ValidationResult Validate => throw new NotImplementedException();
     }
 }

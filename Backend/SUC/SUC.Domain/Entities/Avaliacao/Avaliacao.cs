@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FluentValidation.Results;
+using SUC.Domain.Contracts.Base;
 using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
@@ -9,13 +10,13 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Entities.Avaliacoes
 {
-    public class Avaliacao
+    public class Avaliacao : IBaseValidations
     {
         public Guid IdAvaliacao { get; set; }
         public string Descricao { get; set; }
         public int NumeroAvalicao { get; set; }
 
-        //public ValidationResult Validate
-        //    => new AvaliacaoValidation().Validate(this);
+        public ValidationResult Validate
+            => new AvaliacaoValidation().Validate(this);
     }
 }
