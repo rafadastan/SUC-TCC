@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using SUC.Domain.Contracts.Base;
+using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace SUC.Domain.Entities.Demanda
         public int Status { get; set; }
         public string Protocolo { get; set; }
 
-        public ValidationResult Validate => throw new NotImplementedException();
+        public ValidationResult Validate 
+            => new DemandaValidator().Validate(this);
     }
 }

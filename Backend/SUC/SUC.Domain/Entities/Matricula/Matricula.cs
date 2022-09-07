@@ -1,6 +1,7 @@
 ﻿using FluentValidation.Results;
 using SUC.Domain.Contracts.Base;
 using SUC.Domain.Entities.EntityEndereco;
+using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,7 @@ namespace SUC.Domain.Entities.Matricula
 
         public Endereco Endereco { get; set; }
 
-        public ValidationResult Validate => throw new NotImplementedException();
+        public ValidationResult Validate 
+            => new MatriculaValidation().Validate(this);
     }
 }

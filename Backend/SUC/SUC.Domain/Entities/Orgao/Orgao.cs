@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SUC.Domain.Entities.DepartamentoEntity;
 using SUC.Domain.Contracts.Base;
 using FluentValidation.Results;
+using SUC.Domain.Validations;
 
 namespace SUC.Domain.Entities
 {
@@ -16,6 +17,7 @@ namespace SUC.Domain.Entities
         public string NomeOrgao { get; set; }
         public Departamento Departamento { get; set; }
 
-        public ValidationResult Validate => throw new NotImplementedException();
+        public ValidationResult Validate 
+            => new OrgaoValidator().Validate(this);
     }
 }

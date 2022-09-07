@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using SUC.Domain.Contracts.Base;
+using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace SUC.Domain.Entities.Indices
         public int Percentual { get; set; }
         public int Media { get; set; }
 
-        public ValidationResult Validate => throw new NotImplementedException();
+        public ValidationResult Validate 
+            => new IndiceValidator().Validate(this);
     }
 }

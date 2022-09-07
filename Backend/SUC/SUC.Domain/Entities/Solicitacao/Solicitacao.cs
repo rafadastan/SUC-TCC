@@ -6,6 +6,7 @@ using SUC.Domain.Entities.Avaliacoes;
 using static SUC.Domain.Enum.DomainEnum;
 using SUC.Domain.Contracts.Base;
 using FluentValidation.Results;
+using SUC.Domain.Validations;
 
 namespace SUC.Domain.Entities.Solicitacao
 {
@@ -25,6 +26,7 @@ namespace SUC.Domain.Entities.Solicitacao
         public Avaliacao Avaliacao { get; set; }
         public Usuario Usuario { get; set; }
 
-        public ValidationResult Validate => throw new NotImplementedException();
+        public ValidationResult Validate 
+            => new SolicitacaoValidator().Validate(this);
     }
 }

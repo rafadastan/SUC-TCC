@@ -79,7 +79,8 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
 
             builder.HasOne(c => c.Perfil)
                 .WithMany()
-                .HasForeignKey(x => x.IdPerfil).IsRequired()
+                .HasForeignKey(x => x.IdPerfil)
+                .IsRequired()
                 .OnDelete(DeleteBehavior.Cascade);
         }
     }

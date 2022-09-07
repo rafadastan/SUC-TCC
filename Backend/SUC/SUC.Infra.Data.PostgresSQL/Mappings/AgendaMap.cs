@@ -13,7 +13,30 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
     {
         public void Configure(EntityTypeBuilder<Agenda> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable("Agenda");
+
+            builder.HasKey(a => a.IdAgenda);
+
+            builder.Property(a => a.IdAgenda)
+                .HasColumnName("IdAgenda")
+                .IsRequired();
+
+            builder.Property(a => a.Local)
+                .HasColumnName("Local");
+
+            builder.Property(a => a.Titulo)
+                .HasColumnName("Titulo");
+
+            builder.Property(a => a.DataAgenda)
+                .HasColumnType("Date")
+                .HasColumnName("DataAgenda");
+
+            builder.Property(a => a.Descricao)
+                .HasColumnName("Descricao");
+            
+            #region Relacionamento
+
+            #endregion
         }
     }
 }

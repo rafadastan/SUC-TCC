@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using SUC.Domain.Entities.Indices;
+using SUC.Domain.Entities.Atendimento;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace SUC.Domain.Validations
 {
-    public class IndiceValidator : AbstractValidator<Indice>
+    public class AtendimentoValidation : AbstractValidator<Atendimento>
     {
-        public IndiceValidator()
+        public AtendimentoValidation()
         {
-            RuleFor(i => i.IdIndice)
+            RuleFor(a => a.IdAtendimento)
                 .NotEmpty()
                 .WithMessage("O Id não pode ser nulo");
-
         }
     }
 }

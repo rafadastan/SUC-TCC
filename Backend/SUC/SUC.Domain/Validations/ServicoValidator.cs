@@ -14,7 +14,7 @@ namespace SUC.Domain.Validations
         {
             RuleFor(s => s.IdServico)
                 .NotEmpty()
-                .WithMessage("O IdServico não pode ser nulo");
+                .WithMessage("O Id não pode ser nulo");
 
             RuleFor(s => s.NomeServico)
                 .NotEmpty()

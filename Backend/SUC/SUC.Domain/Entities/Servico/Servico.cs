@@ -1,5 +1,6 @@
 ﻿using FluentValidation.Results;
 using SUC.Domain.Contracts.Base;
+using SUC.Domain.Validations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ namespace SUC.Domain.Entities.Servicos
         public bool Ativo { get; set; }
         public TipoServico TipoServico { get; set; }
 
-        public ValidationResult Validate => throw new NotImplementedException();
+        public ValidationResult Validate 
+            => new ServicoValidator().Validate(this);
     }
 }
