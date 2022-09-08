@@ -13,7 +13,24 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
     {
         public void Configure(EntityTypeBuilder<Informacao> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable("Informacao");
+
+            builder.HasKey(i => i.IdInformacao);
+
+            builder.Property(i => i.IdInformacao)
+                .HasColumnName("IdInformacao")
+                .IsRequired();
+
+            builder.Property(i => i.Descricao)
+                .HasColumnName("Descricao")
+                .HasMaxLength(250);
+
+            builder.Property(i => i.NomeSolicitacaoInformacao)
+                .HasColumnName("NomeSolicitacaoInformacao");
+
+            #region Relacionamento
+
+            #endregion
         }
     }
 }

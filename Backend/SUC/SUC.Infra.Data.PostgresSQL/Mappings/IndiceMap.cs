@@ -13,7 +13,24 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
     {
         public void Configure(EntityTypeBuilder<Indice> builder)
         {
-            throw new NotImplementedException();
+            builder.ToTable("Indice");
+
+            builder.HasKey(i => i.IdIndice);
+
+            builder.Property(i => i.IdIndice)
+                .HasColumnName("IdIndice")
+                .IsRequired();
+
+            builder.Property(i => i.Media)
+                .HasColumnName("Media")
+                ;
+
+            builder.Property(i => i.Percentual)
+                .HasColumnName("Percentual");
+
+            #region Relacionamento
+
+            #endregion
         }
     }
 }
