@@ -14,5 +14,6 @@ namespace SUC.Application.Commands.Agenda
         public string Descricao { get; set; }
         public string Local { get; set; }
         public DateTime DataAgenda { get; set; }
+        public bool Ativo { get; set; }
     }
 }

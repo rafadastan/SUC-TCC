@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SUC.Domain.Entities.Agenda;
 
 namespace SUC.Infra.Data.PostgresSQL.Contexts
 {
@@ -21,13 +22,14 @@ namespace SUC.Infra.Data.PostgresSQL.Contexts
         public DbSet<Perfil> Perfis { get; set; }
         public DbSet<Contato> Contatos { get; set; }
         public DbSet<Endereco> Enderecos { get; set; }
-
+        public  DbSet<Agenda> Agenda { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new UsuarioMap());
             modelBuilder.ApplyConfiguration(new PerfilMap());
             modelBuilder.ApplyConfiguration(new ContatoMap());
             modelBuilder.ApplyConfiguration(new EnderecoMap());
+            modelBuilder.ApplyConfiguration(new AgendaMap());
 
             modelBuilder.Entity<Usuario>(entity =>
             {

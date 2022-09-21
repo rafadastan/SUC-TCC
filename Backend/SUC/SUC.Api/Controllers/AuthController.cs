@@ -1,13 +1,10 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using SUC.Api.Security;
+﻿using Microsoft.AspNetCore.Mvc;
 using SUC.Application.Commands.Auth;
-using SUC.Application.Contracts.Auth;
+using SUC.Application.Contracts.Agenda;
 using SUC.Security;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
+using SUC.Application.Contracts.Auth;
 
 namespace SUC.Api.Controllers
 {
@@ -15,10 +12,10 @@ namespace SUC.Api.Controllers
     [ApiController]
     public class AuthController : ControllerBase
     {
-        private readonly IAgendaApplicationService _authApplicationService;
+        private readonly IAuthApplicationService _authApplicationService;
         private readonly AccessTokenService _jwtToken;
 
-        public AuthController(IAgendaApplicationService authApplicationService,
+        public AuthController(IAuthApplicationService authApplicationService,
             AccessTokenService jwtToken)
         {
             this._authApplicationService = authApplicationService;
@@ -33,17 +30,17 @@ namespace SUC.Api.Controllers
         {
             try
             {
-                var athentication = await _authApplicationService.Authentication(model);
+                var authentication = await _authApplicationService.Authentication(model);
 
-                if (athentication != null)
+                if (authentication != null)
                 {
                     return StatusCode(200, new
                     {
                         Message = "Autenticado com sucesso.",
-                        Usuario = athentication,
+                        Usuario = authentication,
                         AccessToken = new
                         {
-                            BearerToken = _jwtToken.GenerateToken(athentication.Email),
+                            BearerToken = _jwtToken.GenerateToken(authentication.Email),
                             Expiration = DateTime.Now.AddDays(1)
                         }
                     });

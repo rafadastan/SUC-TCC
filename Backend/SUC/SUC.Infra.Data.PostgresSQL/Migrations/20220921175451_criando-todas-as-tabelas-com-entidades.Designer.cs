@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using SUC.Infra.Data.PostgresSQL.Contexts;
@@ -9,46 +10,16 @@ using SUC.Infra.Data.PostgresSQL.Contexts;
 namespace SUC.Infra.Data.PostgresSQL.Migrations
 {
     [DbContext(typeof(SqlContext))]
-    partial class SqlContextModelSnapshot : ModelSnapshot
+    [Migration("20220921175451_criando-todas-as-tabelas-com-entidades")]
+    partial class criandotodasastabelascomentidades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 63)
                 .HasAnnotation("ProductVersion", "5.0.10")
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-            modelBuilder.Entity("SUC.Domain.Entities.Agenda.Agenda", b =>
-                {
-                    b.Property<Guid>("IdAgenda")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid")
-                        .HasColumnName("IdAgenda");
-
-                    b.Property<bool>("Ativo")
-                        .HasColumnType("boolean");
-
-                    b.Property<DateTime>("DataAgenda")
-                        .HasColumnType("Date")
-                        .HasColumnName("DataAgenda");
-
-                    b.Property<string>("Descricao")
-                        .HasColumnType("text")
-                        .HasColumnName("Descricao");
-
-                    b.Property<string>("Local")
-                        .HasColumnType("text")
-                        .HasColumnName("Local");
-
-                    b.Property<string>("Titulo")
-                        .HasColumnType("text")
-                        .HasColumnName("Titulo");
-
-                    b.HasKey("IdAgenda");
-
-                    b.ToTable("Agenda");
-                });
 
             modelBuilder.Entity("SUC.Domain.Entities.EntityEndereco.Endereco", b =>
                 {

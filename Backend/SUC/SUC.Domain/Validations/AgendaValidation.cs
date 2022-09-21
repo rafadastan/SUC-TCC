@@ -18,7 +18,7 @@ namespace SUC.Domain.Validations
 
             RuleFor(u => u.DataAgenda)
                 .NotEmpty()
-                .WithMessage("O número da avaliação deve ser preenchido");
+                .WithMessage("a data da agenda deve ser preenchido");
         }
     }
 }

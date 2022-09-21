@@ -37,7 +37,6 @@ namespace SUC.Infra.Data.PostgresSQL_BaseRepository
         {
             _sqlContext.Entry(entity).State = EntityState.Deleted;
             await _sqlContext.SaveChangesAsync();
-
         }
 
         public virtual async Task<List<TEntity>> GetAll()
@@ -46,18 +45,18 @@ namespace SUC.Infra.Data.PostgresSQL_BaseRepository
                 .ToListAsync();
         }
 
-        public virtual async Task<List<TEntity>> GetAll(Func<TEntity, bool> where)
+        public virtual Task<List<TEntity>> GetAll(Func<TEntity, bool> where)
         {
-            return _sqlContext.Set<TEntity>()
+            return Task.FromResult(_sqlContext.Set<TEntity>()
                 .Where(where)
-                .ToList();
+                .ToList());
         }
 
-        public virtual async Task<TEntity> Get(Func<TEntity, bool> where)
+        public virtual Task<TEntity> Get(Func<TEntity, bool> where)
         {
-            return _sqlContext.Set<TEntity>()
-                    .Where(where)
-                    .FirstOrDefault();
+            return Task.FromResult(_sqlContext.Set<TEntity>()
+                .Where(where)
+                .FirstOrDefault());
         }
 
         public virtual async Task<TEntity> GetById(TKey id)

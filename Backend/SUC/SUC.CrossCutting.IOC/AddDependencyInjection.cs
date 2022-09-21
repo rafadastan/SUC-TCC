@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
+using SUC.Application.Contracts.Agenda;
 using SUC.Application.Contracts.Atendimento;
 using SUC.Application.Contracts.Auth;
 using SUC.Application.Contracts.Avaliacao;
@@ -17,6 +18,7 @@ using SUC.Application.Contracts.Servico;
 using SUC.Application.Contracts.Solicitacao;
 using SUC.Application.Contracts.Usuario;
 using SUC.Application.Services;
+using SUC.Application.Services.Agenda;
 using SUC.Application.Services.Atendimento;
 using SUC.Application.Services.Auth;
 using SUC.Application.Services.Avaliacao;
@@ -44,6 +46,7 @@ using SUC.Domain.Contracts.Infra.RepositoryAgenda;
 using SUC.Domain.Contracts.Perfils;
 using SUC.Domain.Contracts.Services;
 using SUC.Domain.Contracts.Usuarios;
+using SUC.Domain.Notifications;
 using SUC.Domain.Services;
 using SUC.Domain.Services.Auth;
 using SUC.Infra.Data.MongoDB.Caching;
@@ -64,7 +67,8 @@ namespace SUC.CrossCutting.IOC
         public static void AddDependencyInjections(IServiceCollection services)
         {
             #region Application
-            services.AddTransient<IAgendaApplicationService, AuthApplicationService>();
+            services.AddTransient<IAuthApplicationService, AuthApplicationService>();
+            services.AddTransient<IAgendaApplicationService, AgendaApplicationService>();
             services.AddTransient<IPerfilApplicationService, PerfilApplicationService>();
             services.AddTransient<IUsuarioApplicationService, UsuarioApplicationService>();
             services.AddTransient<IUsuarioApplicationService, UsuarioApplicationService>();
@@ -167,6 +171,8 @@ namespace SUC.CrossCutting.IOC
             services.AddTransient<IUserContext, UserHttpContext>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             #endregion
+            
+            services.AddScoped<NotificationContext>();
         }
     }
 }

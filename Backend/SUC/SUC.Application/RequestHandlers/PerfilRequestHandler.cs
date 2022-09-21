@@ -67,7 +67,7 @@ namespace SUC.Application.RequestHandlers
                 Perfil = perfil
             };
 
-            await _mediator.Publish(notification);
+            await _mediator.Publish(notification, cancellationToken);
 
             return Unit.Value;
         }
@@ -84,7 +84,7 @@ namespace SUC.Application.RequestHandlers
                 Perfil = perfil
             };
 
-            await _mediator.Publish(notification);
+            await _mediator.Publish(notification, cancellationToken);
 
             return Unit.Value;
         }

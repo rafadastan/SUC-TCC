@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Contracts.Auth
 {
-    public interface IAgendaApplicationService
+    public interface IAuthApplicationService
     {
         Task<AuthModel> Authentication(AuthenticationCommand authenticationModel);
     }

@@ -49,7 +49,7 @@ namespace SUC.Infra.Data.PostgresSQL._3._Repository
         public IContatoRepository ContatoRepository => new ContatoRepository(_sqlContext);
         public IEnderecoRepository EnderecoRepository => new EnderecoRepository(_sqlContext);
 
-        public IAgendaRepository AgenciaRepository => throw new NotImplementedException();
+        public IAgendaRepository AgenciaRepository => new AgendaRepository(_sqlContext);
 
         public IAtendimentoRepository AtendimentoRepository => throw new NotImplementedException();
 

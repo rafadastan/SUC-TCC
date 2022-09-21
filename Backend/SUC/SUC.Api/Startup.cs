@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SUC.Domain.Notifications;
 
 namespace SUC.Api
 {
@@ -28,6 +29,9 @@ namespace SUC.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddMvc(options => options.Filters.Add<NotificationFilter>())
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             AddDependencyInjection.AddDependencyInjections(services);
             CorsConfiguration.AddCors(services);

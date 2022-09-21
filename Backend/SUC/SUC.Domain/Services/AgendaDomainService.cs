@@ -5,8 +5,10 @@ using SUC.Domain.Entities.Agenda;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using SUC.Domain.Notifications;
 
 namespace SUC.Domain.Services
 {
@@ -14,27 +16,37 @@ namespace SUC.Domain.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IAgendaRepository _agendaRepository;
+        private readonly NotificationContext _notificationContext;
+
         public AgendaDomainService(IUnitOfWork unitOfWork, 
-            IAgendaRepository agendaRepository)
+            IAgendaRepository agendaRepository, 
+            NotificationContext notificationContext)
             : base(unitOfWork.AgenciaRepository)
         {
             _unitOfWork = unitOfWork;
             _agendaRepository = agendaRepository;
+            _notificationContext = notificationContext;
         }
 
-        public override Task Create(Agenda entity)
+        public override async Task Create(Agenda entity)
         {
-            return base.Create(entity);
+            await base.Create(entity);
         }
 
-        public override Task Update(Agenda entity)
+        public override async Task Update(Agenda entity)
         {
-            return base.Update(entity);
+            await base.Update(entity);
         }
 
-        public override Task Delete(Agenda entity)
+        public override async Task Delete(Agenda entity)
         {
-            return base.Delete(entity);
+            if (await _agendaRepository.GetById(entity.IdAgenda) == null)
+                _notificationContext.AddNotification(entity.IdAgenda.ToString(), "Error ao deletar");
+
+            if (!_notificationContext.HasNotifications)
+                await _unitOfWork.AgenciaRepository.Delete(entity);
+            else
+                return;
         }
     }
 }

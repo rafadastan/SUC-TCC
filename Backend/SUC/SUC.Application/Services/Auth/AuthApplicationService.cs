@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace SUC.Application.Services.Auth
 {
-    public class AuthApplicationService : IAgendaApplicationService
+    public class AuthApplicationService : IAuthApplicationService
     {
         private readonly IAuthDomainService _auth;
         private readonly IMapper _mapper;

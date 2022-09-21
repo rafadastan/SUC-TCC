@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using SUC.Domain.Notifications;
 
 namespace SUC.Application.RequestHandlers
 {
@@ -22,25 +23,35 @@ namespace SUC.Application.RequestHandlers
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
         private readonly IAgendaDomainService _agendaDomainService;
+        private readonly NotificationContext _notificationContext;
+        private readonly Notification _notification;
 
         public AgendaRequestHandler(IMediator mediator, 
             IMapper mapper,
-            IAgendaDomainService agendaDomainService)
+            IAgendaDomainService agendaDomainService, 
+            NotificationContext notificationContext)
         {
             _mediator = mediator;
             _mapper = mapper;
             _agendaDomainService = agendaDomainService;
+            _notificationContext = notificationContext;
         }
 
-        public async Task<Unit> Handle(AgendaDeleteCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(AgendaCreateCommand request, CancellationToken cancellationToken)
         {
             var agenda = _mapper.Map<Agenda>(request);
 
-            await _agendaDomainService.Delete(agenda);
+            agenda.IdAgenda = Guid.NewGuid();
+
+            var result = agenda.Validate;
+            if (!result.IsValid)
+                throw new ValidationException(result.Errors);
+
+            await _agendaDomainService.Create(agenda);
 
             var notification = new AgendaNotification
             {
-                Action = ActionNotification.Delete,
+                Action = ActionNotification.Create,
                 Agenda = agenda
             };
 
@@ -66,25 +77,22 @@ namespace SUC.Application.RequestHandlers
             return Unit.Value;
         }
 
-        public async Task<Unit> Handle(AgendaCreateCommand request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(AgendaDeleteCommand request, CancellationToken cancellationToken)
         {
             var agenda = _mapper.Map<Agenda>(request);
+            
+            await _agendaDomainService.Delete(agenda);
 
-            agenda.IdAgenda = Guid.NewGuid();
-
-            var result = agenda.Validate;
-            if (!result.IsValid)
-                throw new ValidationException(result.Errors);
-
-            await _agendaDomainService.Create(agenda);
+            if (_notificationContext.HasNotifications)
+                return new Unit();
 
             var notification = new AgendaNotification
             {
-                Action = ActionNotification.Create,
+                Action = ActionNotification.Delete,
                 Agenda = agenda
             };
-
-            await _mediator.Publish(notification);
+            
+            await _mediator.Publish(notification, cancellationToken);
 
             return Unit.Value;
         }

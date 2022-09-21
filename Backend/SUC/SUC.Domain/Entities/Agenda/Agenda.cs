@@ -16,7 +16,7 @@ namespace SUC.Domain.Entities.Agenda
         public string Descricao { get; set; }
         public string Local { get; set; }
         public DateTime DataAgenda { get; set; }
-
+        public bool Ativo { get; set; }
         public ValidationResult Validate
             => new AgendaValidation().Validate(this);
     }
