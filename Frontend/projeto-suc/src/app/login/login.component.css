@@ -1,0 +1,74 @@
+/* Application-wide Styles */
+h1 {
+    color: #369;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 250%;
+  }
+  h2, h3 {
+    color: #444;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+  }
+
+  h4{
+    position: absolute;
+    width: 206px;
+    height: 72px;
+    left: 537px;
+    top: 101px;
+
+    /* Heading/Montserrat/20/Medium */
+
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    /* or 140% */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+  }
+  body {
+    margin: 2em;
+  }
+  body, input[type="text"], button {
+    color: #E5E5E5;
+    font-family: Cambria, Georgia, serif;
+    height: 720px;
+    width: 1280px;
+    left: -3506px;
+    top: -4897px;
+    border-radius: 0px;
+
+  }
+  
+  button {
+    background-color: #eee;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    color: black;
+    font-size: 1.2rem;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  button:hover {
+    background-color: black;
+    color: white;
+  }
+  button:disabled {
+    background-color: #eee;
+    color: #aaa;
+    cursor: auto;
+  }
+  
+  /* everywhere else */
+  * {
+    font-family: Arial, Helvetica, sans-serif;
+  }
+

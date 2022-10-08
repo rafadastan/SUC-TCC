@@ -1,0 +1,73 @@
+.menu-topo{
+    height: 90px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    border-radius: 0px;
+    background: #57D0EC;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+    position: fixed;
+  }
+  
+  .name-prefeitura{
+    height: 36px;
+    width: 167px;
+    left: 64px;
+    top: 15px;
+    border-radius: nullpx;
+    font-family: Montserrat;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 36px;
+    letter-spacing: 0em;
+    text-align: left;
+    position: absolute;
+    width: 167px;
+    height: 36px;
+    left: 64px;
+    top: 15px;
+    
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    color: #F9F9F9;
+  }
+  
+  .icon-person-login{
+    height: 36px;
+    width: 36px;
+    left: 1180px;
+    top: 15px;
+    border-radius: 30px;
+    padding: 8px;
+  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 4px;
+    
+    position: absolute;
+    width: 36px;
+    height: 36px;
+    left: 1180px;
+    top: 15px;
+    background: #F9F9F9;
+    border-radius: 30px;
+  }
+  
+  .painel-fixado{
+    background: rgba(221, 246, 251, 1);
+    position: absolute;
+    width: 1280px;
+    height: 221px;
+    left: 0px;
+    top: 0px;
+  }
+  
+  body{
+    background: #E5E5E5;
+  }
