@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SUC.Domain.Entities.EntityEndereco;
 
 namespace SUC.Infra.Data.PostgresSQL.Mappings
 {
@@ -68,20 +69,21 @@ namespace SUC.Infra.Data.PostgresSQL.Mappings
                 .HasColumnType("date");
 
             builder.HasOne(c => c.Contato)
-                .WithMany()
-                .HasForeignKey(x => x.IdContato)
+                .WithOne()
+                .HasForeignKey<Contato>(c => c.IdContato)
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(c => c.Endereco)
-                .WithMany()
-                .HasForeignKey(x => x.IdEndereco)
+                .WithOne()
+                .HasForeignKey<Endereco>(c => c.IdEndereco)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            //Perfil não pode ser excluido, mas atribui null a referencia IdPerfil
             builder.HasOne(c => c.Perfil)
                 .WithMany()
                 .HasForeignKey(x => x.IdPerfil)
                 .IsRequired()
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31729.503
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. API", "1. API", "{4579CBE6-0B93-45F9-81FE-277FEE37FC55}"
 EndProject
@@ -57,13 +57,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5. CrossCutting", "5. Cross
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Tests.API", "SUC.Tests.API\SUC.Tests.API.csproj", "{2FBC8E58-3A61-4913-A1E6-917F5F7AC8AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Application.Tests", "SUC.Application.Tests\SUC.Application.Tests.csproj", "{9B7ED0A6-F6C5-4B27-AC59-D72452AFA69A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Application.Tests", "SUC.Application.Tests\SUC.Application.Tests.csproj", "{9B7ED0A6-F6C5-4B27-AC59-D72452AFA69A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain", "3. Domain", "{9F6BBE79-B9B9-4AC7-A132-D77D934428EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.Domain.Tests", "SUC.Domain.Tests\SUC.Domain.Tests.csproj", "{39A09CD6-0634-4A17-9DD4-7BEC9AA14795}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.Domain.Tests", "SUC.Domain.Tests\SUC.Domain.Tests.csproj", "{39A09CD6-0634-4A17-9DD4-7BEC9AA14795}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUC.InfraStructure.Tests", "SUC.InfraStructure.Tests\SUC.InfraStructure.Tests.csproj", "{B3FAA6BF-645F-4ABF-AB55-4B0F95A3316D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SUC.InfraStructure.Tests", "SUC.InfraStructure.Tests\SUC.InfraStructure.Tests.csproj", "{B3FAA6BF-645F-4ABF-AB55-4B0F95A3316D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7. AutomatedTests", "7. AutomatedTests", "{9988DFA5-F893-474A-8353-E4068FF91335}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
